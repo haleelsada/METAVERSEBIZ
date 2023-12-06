@@ -1,25 +1,51 @@
+.signin-bg{
+  display: flex;
+  height: calc(100vh - 70px);
+  background-image: url('../resources/meta-bg2.jpg');
+  background-color: #280d0d;
+  background-size: cover;
+  margin: 0px;
+  padding: 0px;
+}
 .signin-container {
     display: flex;
     justify-content: center;
-    width: 60vw;
-    height: 770px;
     border-radius: 7px;
-    margin: 10px auto 0 auto;
-    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin: 100px auto 0 auto;
   }
+
   .signin-left-container{
-    width: 30vw;
-    height: 770px;
+    width: 20vw;
+    height: 510px;
     border-radius: 7px 0px 0px 7px;
-    background-image:url("https://media.giphy.com/media/yQqNPOdGMexumRMxVP/giphy-downsized-large.gif");
-    background-size: cover;
+    background-color: #7a539a;
     background-repeat: no-repeat;
+  }
+  #signin-meta-icon{
+    margin: 100px 70px 0px 75px;
+  }
+  .signin-title{
+    padding: 0px 70px 0px 70px;
+    color: #ffffff;
+    -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+    text-align: left;
+  }
+  .signin-subtitle{
+    padding: 0px 70px 0px 70px;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: left;
+  }
+  .signin-copyright{
+    margin: 70px 70px 0px 70px;
+    color: #ffffff;
   }
   .signin-right-container{
     background-color: #ffffff;
     border-radius: 0px 7px 7px 0px;
-    width: 30vw;
-    height: 770px;
+    width: 20vw;
+    height: 510px;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
   .signin-sub-right-cont{
     display: flex;
@@ -46,10 +72,10 @@
     font-size: 20px;
     padding: 0 .5vw;
     display: flex;
-    margin: 10px 3vh 10px 3.7vw;
+    margin: 10px 3vw 0px 3.7vw;
     box-sizing: border-box;
     outline: none;
-    border-radius: 5px;
+    border-radius: 7px;
     background-color: #00000000;
     border: 2px solid #ccc;
     -webkit-transition: 0.5s;
@@ -69,9 +95,9 @@
     background-color: #7a539a;
     color: white;
     display: flex;
-    margin: 20px 3vw 20px 3.7vw;
+    margin: 10px 3vw 0px 3.7vw;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px 0px 10px 0px;
     cursor: pointer;
   }
   .signin-button:hover {

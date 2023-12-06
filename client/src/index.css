@@ -16,3 +16,6 @@ input,
 input::placeholder {
     font: 1.05rem/2 sans-serif;
 }
+a{
+  text-decoration: none;
+}

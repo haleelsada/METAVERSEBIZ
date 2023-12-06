@@ -19,13 +19,18 @@ const Signup = () => {
         }
 
   return (
-    <div className='signup-background'>
+    <div>
       <Header />
+    <div className='signup-bg'>
     <div class="signup-container">
         <div className='signup-left-container'>
+        <img id="signup-meta-icon" src="metaversebiz-icon2.png" alt="metaversebiz-icon"/>
+          <h1 className='signup-title'>Stimulate<br></br>Excel<br></br>Achieve!</h1>
+          <h2 className='signup-subtitle'>Sign up to enter the<br></br>new business realm</h2>
+          <p className='signup-copyright'>&copy; metaversebiz.com</p>
         </div>
         <div className='signup-right-container'>
-        <div className='signin-sub-right-cont'>
+        <div className='signup-sub-right-cont'>
       <p className="signup-text">Sign Up</p><br></br>
       <form onSubmit={handlesignupFormSubmit} class="signup-form">
         <label for="username" className='signup-label'>Email</label><br></br>
@@ -37,7 +42,7 @@ const Signup = () => {
           <label for="password" className='signup-label'>Confirm Password</label><br></br>
         <input type="password" required id='confrm-password' onChange={(e)=>setPassword(e.target.value)}
           className="signup-input"/><br></br>
-          <input id="signup-agree" value="Yes" type="checkbox"></input>
+          <input id="signup-agree" value="Yes" type="checkbox" required></input>
           <label for="signup-agree" className='signup-terms'>I agree with <a href="/termsofuse">Terms of Use</a> and <a href="/privacy">Privacy Policy</a>.</label>
         <input type="submit" value="Sign Up" className="signup-button"/><br></br>
         <label for="new2signup" className='new2signup-lab'>Already have an account? </label>
@@ -45,6 +50,7 @@ const Signup = () => {
       </form>
       </div>
       </div>
+    </div>
     </div>
     <Footer />
     </div>)}

@@ -1,27 +1,52 @@
+.signup-bg{
+  display: flex;
+  height: calc(100vh - 70px);
+  background-image: url('../resources/meta-bg2.jpg');
+  background-color: #280d0d;
+  background-size: cover;
+  margin: 0px;
+  padding: 0px;
+}
 .signup-container {
-    display: flex;
-    justify-content: center;
-    width: 60vw;
-    height: 770px;
-    margin: 10px auto 0 auto;
-    border-radius: 7px;
-    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  border-radius: 7px;
+  margin: 100px auto 0 auto;
   }
   .signup-left-container{
-    width: 30vw;
-    height: 770px;
+    width: 20vw;
+    height: 650px;
     border-radius: 7px 0px 0px 7px;
-    background-image:url("https://media.giphy.com/media/q0xSEJug2S9IFyGpwa/giphy.gif");
-    background-size: cover;
+    background-color: #7a539a;
     background-repeat: no-repeat;
+  }
+  #signup-meta-icon{
+    margin: 150px 70px 0px 75px;
+  }
+  .signup-title{
+    padding: 0px 70px 0px 70px;
+    color: #ffffff;
+    -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+    text-align: left;
+  }
+  .signup-subtitle{
+    padding: 0px 70px 0px 70px;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: left;
+  }
+  .signup-copyright{
+    margin: 160px 70px 0px 70px;
+    color: #ffffff;
   }
   .signup-right-container{
     background-color: #ffffff;
     border-radius: 0px 7px 7px 0px;
-    width: 30vw;
-    height: 770px;
+    width: 20vw;
+    height: 650px;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
-  .signin-sub-right-cont{
+  .signup-sub-right-cont{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,7 +74,7 @@
     margin: 10px 3vh 10px 3.7vw;
     box-sizing: border-box;
     outline: none;
-    border-radius: 5px;
+    border-radius: 7px;
     background-color: #00000000;
     border: 2px solid #ccc;
     -webkit-transition: 0.5s;
@@ -79,7 +104,7 @@
     display: flex;
     margin: 20px 3vw 20px 3.7vw;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px 0px 10px 0px;
     cursor: pointer;
   }
   .signup-button:hover {

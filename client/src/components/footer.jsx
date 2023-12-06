@@ -24,7 +24,7 @@ const Footer = () => {
       <div className='col-fix'>
         <div className='mail-us'>
           <h4>Mail us:</h4>
-          <p>matrizon@gmail.com</p>
+          <p>metaversebiz@gmail.com</p>
         </div>
       </div>
       <div className='col-fix'>
@@ -36,7 +36,7 @@ const Footer = () => {
       
     </div>
     <div className='copy'>
-      <p>Copyright &copy; matrizon.com</p>
+      <p>Copyright &copy; metaversebiz.com</p>
     </div>
     </div>
   )
