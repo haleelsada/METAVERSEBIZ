@@ -1,6 +1,6 @@
 .signup-bg{
   display: flex;
-  height: calc(100vh - 70px);
+  height: calc(1080px - 70px);
   background-image: url('../resources/meta-bg2.jpg');
   background-color: #280d0d;
   background-size: cover;

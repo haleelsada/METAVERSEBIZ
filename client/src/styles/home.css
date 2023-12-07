@@ -4,7 +4,7 @@
 .home-bg{
   width: 100%;
   display: flex;
-  height: calc(100vh - 70px);
+  height: calc(1080px - 70px);
   background-image: url('../resources/meta-bg3.jpg');
   background-size: cover;
 }
@@ -25,7 +25,7 @@
   align-items: center;
   border: 3px solid #7a539a;
   outline: none;
-  background-color: #fff;
+  background-color: #ffffff;
   color: #000000;
   cursor: pointer;
 }
@@ -57,13 +57,13 @@
 .home-tutorial-1{
   display: flex;
   background-color: #7a539a61;
-  height: 100vh;
+  height: 1080px;
 }
 .home-tutorial-1-contents{
   
   display: flex;
   justify-content: center;
-  margin: 100px auto 0px auto;
+  margin: 225px auto 0px auto;
   
 }
 .home-tutorial-1-des{
@@ -79,7 +79,7 @@
 }
 .home-tutorial-2{
   background-color: #ffffff;
-  height: 100vh;
+  height: 1080px;
 }
 .home-tutorial-2-contents{
   display: flex;
