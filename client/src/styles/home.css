@@ -17,12 +17,11 @@
   font-weight: 700;
 }
 .home-play-button {
-  border-radius: 5px;
   margin: 20px 30px 20px 0px;
   padding: 7px 15px;
   font-size: 20px;
   font-weight: 700;
-  border-radius: 7px 0px 7px 0px;
+  border-radius: 10px 0px 10px 0px;
   align-items: center;
   border: 3px solid #7a539a;
   outline: none;
@@ -37,11 +36,10 @@
   border-radius: 7px 0px 7px 0px;
 }
 .home-signin-button {
-  border-radius: 5px;
   padding: 7px 30px;
   font-size: 20px;
   font-weight: 700;
-  border-radius: 7px 0px 7px 0px;
+  border-radius: 10px 0px 10px 0px;
   align-items: center;
   border: 3px solid #7a539a;
   outline: none;
@@ -55,3 +53,41 @@
   color: #fff;
   border-radius: 7px 0px 7px 0px;
 }
+
+.home-tutorial-1{
+  display: flex;
+  background-color: #7a539a61;
+  height: 100vh;
+}
+.home-tutorial-1-contents{
+  
+  display: flex;
+  justify-content: center;
+  margin: 100px auto 0px auto;
+  
+}
+.home-tutorial-1-des{
+  text-align: left;
+  padding: 50px 0px 50px 50px;
+  width: 500px;
+  height: 500px;
+  background-color: #ffffff;
+  border-radius: 20px 0px 20px 0px;
+}
+#business-woman{
+  margin: 301px 0px 0px -120px;
+}
+.home-tutorial-2{
+  background-color: #ffffff;
+  height: 100vh;
+}
+.home-tutorial-2-contents{
+  display: flex;
+}
+.home-tutorial-2-des{
+  margin: 200px auto;
+}
+/* .home-tutorial-3{
+  background-color: #7a539a61;
+  height: 100vh;
+} */

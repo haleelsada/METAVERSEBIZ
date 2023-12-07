@@ -10,6 +10,7 @@ const Header = () => {
             <img className='logo1' src="metaversebiz-logo.png" alt="metaverse-logo" />
             </a>
         </div>
+        <div>
             <div className='dropdown'>
             <a href="/signin">
                     <button className='tosignin-button'>
@@ -34,6 +35,7 @@ const Header = () => {
                         </div>
                 </button>
                 </a>
+                </div>
         </div>
     </div>
   )
