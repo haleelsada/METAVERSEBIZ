@@ -1,44 +1,19 @@
 import React from 'react'
 import './header.css'
-
 const Header = () => {
   return (
     <div className='header'>
-        <div className='header-sub'>
-        <div className="logo">
         <a href="/home">
-            <img className='logo1' src="metaversebiz-logo.png" alt="metaverse-logo" />
-            </a>
-        </div>
-        <div>
-            <div className='dropdown'>
-            <a href="/signin">
-                    <button className='tosignin-button'>
-                        <div className='cntr'>
-                            <span>SIGN IN</span>
-                        </div>
-                    </button>
-                    </a>
-                    <div class="dropdown-content">
-                        <a href="/signup">
-                            <div className='cntr-li' id="cntr-li1">
-                                <span>NEW HERE?</span>
-                                <a href='/signup' id='tosignup'><span>SIGN UP</span></a>
-                            </div>
-                        </a>
-                    </div>
-            </div>
-            <a href="/play">
-                <button className='dropd-button'>
+            <img src='finalproject-logo.png'></img>
+        </a>
+        <a href="/play">
+            <button className='header-button' id="register-button">
                 <div className='cntr'>
-                            <span>START PLAYING</span>
-                        </div>
-                </button>
-                </a>
+                    <span>Login  / Register</span>
                 </div>
-        </div>
+            </button>
+        </a>
     </div>
   )
 }
-
 export default Header
