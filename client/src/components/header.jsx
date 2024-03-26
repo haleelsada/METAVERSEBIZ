@@ -1,26 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
+import Login from '../components/login';
 import './header.css'
 const Header = () => {
+
+    const [isOpen, setIsOpen] = useState(false);
+
+  // Function to toggle the login box visibility
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className='header'>
         <div class="dotstock">
-                <h1>Dot stock</h1>
+                <h1>DotStock</h1>
                 </div>
                 <div class="search-box">
                     <input type="text"  id="search-button"></input>
                 </div>
-                
-        <a href="/play">
-        
-            <button className='header-button' id="register-button">
-                
-                <div className='cntr'>
-                    <span>Login/Register</span>
-                   
-                </div>
-            </button>
-            
-        </a>
+
+        <button onClick={togglePopup} className='header-button' id="header-button">Login / Register</button>
+        {isOpen && (
+            <Login />
+        )}
        
         </div>  
   )
