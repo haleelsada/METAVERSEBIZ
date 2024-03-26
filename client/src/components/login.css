@@ -1,0 +1,24 @@
+.login-bg{
+    width: 1200px;
+    height: 550px;
+    display: flex;
+    margin: 0px auto;
+}
+ .login-left-bg{
+    background-color: #00b386;
+    background-image: url("signinorregister-bg.png");
+    background-size: cover;
+    width: 600px;
+   
+}
+.login-right-bg{
+    background-color:#ffffff;
+    width: 600px;
+    display: flex;
+}
+.login-title{
+    font-size: 45px;
+    margin: 50px auto 0px auto;
+    color: #000000;
+    font-weight: 600;
+}

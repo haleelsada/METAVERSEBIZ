@@ -4,7 +4,7 @@
   margin-top: 0px;
 }
 .footer-box {
-    background-color: #1a1919;
+    background-color: #000000;
     color: white;
     height: 140px;
     display: flex;
@@ -42,7 +42,7 @@
     height: 100%;
     width: 100%;
     text-align: center;
-    background-color: #7a539a1b;
+    background-color: #00e7ad10;
     transition: 0.5s;
 }
 
@@ -55,11 +55,11 @@
 }
 
 .mail-us > h4 {
-    color: #7a539a;
+    color: #00b386;
 }
 
 .off-address > h4 {
-    color: #7a539a;
+    color: #00b386;
 }
 
 .copy {
@@ -67,6 +67,6 @@
     padding:10px 0;
     border-top: 1px solid #ffffff15;
     justify-content: center;
-    background-color: #1a1919;
+    background-color: #000000;
     color: white;
 }

@@ -1,39 +1,32 @@
 .home-cont{
   width: 100%;
 }
+
 .home-front{
   display: flex;
   justify-content:space-around;
 }
+
 .home-bg{
   width: 100%;
   background-color: #000000;
-  /* background-image: url("../resources/bg-smoke.png"); */
 }
+
 .home-contents{
-  margin: 70px 0px 0px 300px;
   color: #ffffff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 .home-contents-title{
-  font-size: 66px;
+  font-size: 100px;
   font-weight: 700;
+  margin-bottom: 0px;
 }
-.home-play-button {
-  margin: 20px 30px 20px 0px;
-  padding: 7px 15px;
-  font-size: 20px;
-  font-weight: 700;
-  border-radius: 10px 0px 10px 0px;
-  align-items: center;
-  border: 3px solid #FFB506;
-  outline: none;
-  background-color: #ffffff00;
-  color: #ffffff;
-  cursor: pointer;
-}
+
 .home-play-button:hover {
   
-  background-color: #FFB506;
+  background-color: #f7d82b;
   color: #000000;
   border-radius: 7px 0px 7px 0px;
 }
@@ -43,24 +36,14 @@
   font-weight: 700;
   border-radius: 10px 0px 10px 0px;
   align-items: center;
-  border: 3px solid #FFB506;
+  border: 3px solid #ffd106;
   outline: none;
   background-color: #ffffff00;
   color: #ffffff;
   cursor: pointer;
 }
-.home-signin-button:hover {
-  
-  background-color: #FFB506;
-  color: #000000;
-  border-radius: 7px 0px 7px 0px;
-}
 
-.home-tutorial-1{
-  display: flex;
-  background-color: #bc13fe61;
-  height: 1080px;
-}
+
 .home-tutorial-1-contents{
   
   display: flex;
@@ -76,9 +59,8 @@
   background-color: #ffffff;
   border-radius: 20px 0px 20px 0px;
 }
-#business-woman{
-  margin: 301px 0px 0px -120px;
-}
+
+
 .home-tutorial-2{
   background-color: #ffffff;
   height: 1080px;
@@ -91,13 +73,48 @@
 }
 .home-getstarted{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+ 
   
 
 }
 .getstarted-options{
   width: 300px;
   height: 250px;
-  border:5px solid #FFB506;
-  margin-right: 50px;
+  border:5px solid #00b386;
+ margin: 100px 0px;
+  color: #ffffff;
+  text-align: left;
+  padding: 0px 15px;
+}
+
+.home-contents-subtitle{
+  color: rgb(174, 173, 173);
+  margin-left: 200px;
+}
+.getstart{
+  border-radius: 10px;
+  border: 2px solid #000000;
+  outline: none;
+  background-color:#00b386;
+  color: #000000;
+  cursor: pointer;
+  border: none;
+  margin-left:650px ;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.getstart:hover{
+  background-color:#00e7ad;
+  transition: 0.2s;
+}
+.trade{
+  width:100%;
+}
+.bg-image-1{
+  margin-top: 100px;
+}
+.home-getstarted{
+  background-color: rgb(0, 0, 0);
 }

@@ -3,17 +3,26 @@ import './header.css'
 const Header = () => {
   return (
     <div className='header'>
-        <a href="/home">
-            <img src='finalproject-logo.png'></img>
-        </a>
+        <div class="dotstock">
+                <h1>Dot stock</h1>
+                </div>
+                <div class="search-box">
+                    <input type="text"  id="search-button"></input>
+                </div>
+                
         <a href="/play">
+        
             <button className='header-button' id="register-button">
+                
                 <div className='cntr'>
-                    <span>Login  / Register</span>
+                    <span>Login/Register</span>
+                   
                 </div>
             </button>
+            
         </a>
-    </div>
+       
+        </div>  
   )
 }
 export default Header
