@@ -1,17 +1,9 @@
 import React, {useState} from 'react'
-import Register from '../components/register';
-import './login.css';
+import '../styles/login.css';
 import GoogleLogin from 'react-google-login';
 const Login = () => {
   const [isemailFocused, setIsemailFocused] = useState(false);
   const [ispasswordFocused, setIspasswordFocused] = useState(false);
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  // Function to toggle the login box visibility
-  const togglePopup = () => {
-    setIsOpen(!isOpen);
-  };
   
   return (
     <div className='login-bg'>
@@ -57,10 +49,8 @@ const Login = () => {
               <button className='login-button-click'>Login</button>
             </div>
             <div className='login-no-account'>
-              <a className='login-create-account' onClick={togglePopup}>Don't have an account? <span  className='login-create-account-link'>Register</span>
+              <a href="/register" className='login-create-account' >Don't have an account? <span  className='login-create-account-link'>Register</span>
               </a>
-              {isOpen && (
-            <Register />)}
               </div>
             </div>
       </div>

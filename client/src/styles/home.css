@@ -1,6 +1,3 @@
-.home-cont{
-  width: 100%;
-}
 
 .home-front{
   display: flex;
@@ -19,79 +16,20 @@
   flex-direction: column;
 }
 .home-contents-title{
-  font-size: 100px;
-  font-weight: 700;
-  margin-bottom: 0px;
-}
-
-.home-play-button:hover {
-  
-  background-color: #f7d82b;
-  color: #000000;
-  border-radius: 7px 0px 7px 0px;
-}
-.home-signin-button {
-  padding: 7px 30px;
-  font-size: 20px;
-  font-weight: 700;
-  border-radius: 10px 0px 10px 0px;
-  align-items: center;
-  border: 3px solid #ffd106;
-  outline: none;
-  background-color: #ffffff00;
+  font-size: 70px;
+  text-align: center;
   color: #ffffff;
-  cursor: pointer;
-}
-
-
-.home-tutorial-1-contents{
-  
-  display: flex;
-  justify-content: center;
-  margin: 225px auto 0px auto;
-  
-}
-.home-tutorial-1-des{
-  text-align: left;
-  padding: 50px 0px 50px 50px;
-  width: 500px;
-  height: 500px;
-  background-color: #ffffff;
-  border-radius: 20px 0px 20px 0px;
-}
-
-
-.home-tutorial-2{
-  background-color: #ffffff;
-  height: 1080px;
-}
-.home-tutorial-2-contents{
-  display: flex;
-}
-.home-tutorial-2-des{
-  margin: 200px auto;
-}
-.home-getstarted{
-  display: flex;
-  justify-content: space-around;
- 
-  
-
-}
-.getstarted-options{
-  width: 300px;
-  height: 250px;
-  border:5px solid #00b386;
- margin: 100px 0px;
-  color: #ffffff;
-  text-align: left;
-  padding: 0px 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .home-contents-subtitle{
-  color: rgb(174, 173, 173);
-  margin-left: 200px;
+  color: #b5b5b5;
+  text-align: center;
+  margin-top: 0px;
+  font-size: 30px;
 }
+
 .getstart{
   border-radius: 7px;
   outline: none;
@@ -99,7 +37,8 @@
   color: #000000;
   cursor: pointer;
   border: none;
-  margin-left:650px ;
+  margin: 0px auto;
+  display: flex;
   padding: 15px;
   font-size: 20px;
   font-weight: 600;
@@ -108,31 +47,62 @@
   background-color:#00e7ad;
   transition: 0.2s;
 }
-.trade{
-  width:100%;
-}
-.bg-image-1{
-  margin-top: 100px;
+.home-getstarted-box{
+  background-color: #222222;
 }
 .home-getstarted{
-  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+}
+.home-getstarted-title{
+  font-size: 50px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 20px 0px 0px 0px;
+  margin-bottom: 0px;
+}
+.getstarted-options{
+  width: 300px;
+  height: 250px;
+  border:5px solid #00b386;
+  border-radius: 10px;
+  margin: 70px 4vw 100px 4vw;
+  color: #ffffff;
+  cursor: pointer;
+  text-align: left;
+  padding: 0px 15px;
+}
+.getstarted-options:hover{
+  border:5px solid #00e7ad;
+  box-shadow: 5px 5px 10px 0px #00e7ad7e ;
 }
 
-.getstart-practice{
-  border-radius: 7px;
-  outline: none;
-  background-color:#00b386;
-  color: #000000;
-  cursor: pointer;
-  border: none;
-  padding: 7px;
-  font-size: 16px;
-  font-weight: 600;
+.getstarted-options:hover .getstarted-options-title{
+  color: #00b386;
 }
-.giphy-embed{
-  width:72%;
-  height: 450px;
-  margin: 100px auto;
-  background-image: url(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXFlNjZ2YzJoMXk1aGQxNXkzY2tvdmQ5bXNuNzhyNmw0ejFma3FmMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EdealKz0LxKTGs0hYA/giphy-downsized-large.gif);
+
+.bg-image-1{
+  display: flex;
+  margin: 100px 0px;
+}
+
+.trade{
+  width:70%;
+  margin: 0px auto;
+}
+
+.home-market-title{
+  font-size: 50px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.home-market-subtitle{
+  text-align: center;
+  color: #b5b5b5;
+  font-weight: 500;
+  margin-bottom: 70px;
 }
 

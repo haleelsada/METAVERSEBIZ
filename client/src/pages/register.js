@@ -1,18 +1,11 @@
 import React, {useState} from 'react'
-import './register.css';
-import Login from '../components/login';
+import '../styles/register.css';
 import GoogleLogin from 'react-google-login';
 const Register = () => {
   const [isemailFocused, setIsemailFocused] = useState(false);
   const [ispasswordFocused, setIspasswordFocused] = useState(false);
   const [isconfpasswordFocused, setIsconfpasswordFocused] = useState(false);
 
-  const [isOpen, setIsOpen] = useState(false);
-
-  // Function to toggle the login box visibility
-  const togglePopup = () => {
-    setIsOpen(!isOpen);
-  };
   return (
     <div className='register-bg'>
       <div className='register-left-bg'>
@@ -21,7 +14,7 @@ const Register = () => {
       <div className='register-right-bg'>
         <div className='register-title-box'>
         <div className='register-title'>
-          <span>New to DotStock</span>
+          <span>Welcome Back</span>
         </div>
         </div>
         <div className='register-register-options'>
@@ -61,11 +54,9 @@ const Register = () => {
               <button className='register-button-click'>Register</button>
             </div>
             <div className='register-no-account'>
-              <a className='register-create-account' onClick={togglePopup}>Already have an account? <span  className='register-create-account-link'>Login</span>
+              <a href="/login" className='register-create-account'>Already have an account? <span  className='register-create-account-link'>Login</span>
               </a>
-              {isOpen && (
-            <Login />)}
-              </div>
+            </div>
             </div>
       </div>
     </div>
