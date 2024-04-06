@@ -13,7 +13,7 @@
     margin: 0px;
     justify-content: center;
     z-index: 1;
-    background-color: #000000;
+    background-color: #222222;
 }
 .cntr {
     padding: 10px; 
@@ -37,18 +37,6 @@
 }
 .dotstock{
     color: white;
-    margin-right: 700px;
+    margin-right: 900px;
    
-}
-.search-box{
-    margin-right: 100px;
-    
-}
-#search-button{
-    padding: 4px;
-    width: 300px;
-    border-radius: 6px;
-    color: #5b5b5b;
-    background-color: #ebe8e8;
-    border: none;
 }

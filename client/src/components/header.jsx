@@ -15,10 +15,6 @@ const Header = () => {
         <div class="dotstock">
                 <h1>DotStock</h1>
                 </div>
-                <div class="search-box">
-                    <input type="text"  id="search-button"></input>
-                </div>
-
         <button onClick={togglePopup} className='header-button' id="header-button">Login / Register</button>
         {isOpen && (
             <Login />
