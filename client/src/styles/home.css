@@ -129,3 +129,10 @@
   font-size: 16px;
   font-weight: 600;
 }
+.giphy-embed{
+  width:72%;
+  height: 450px;
+  margin: 100px auto;
+  background-image: url(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXFlNjZ2YzJoMXk1aGQxNXkzY2tvdmQ5bXNuNzhyNmw0ejFma3FmMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EdealKz0LxKTGs0hYA/giphy-downsized-large.gif);
+}
+

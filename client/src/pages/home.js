@@ -44,7 +44,9 @@ function Home () {
                      insights and receiving relevant advice to improve overall performance.</p>
                      <button class="getstart-practice">Get started</button>
                 </div>
-            </div>
+                </div>
+                 {/* <div className='giphy-embed'></div> */}
+                
     </div>
     <Footer />
     </div>
