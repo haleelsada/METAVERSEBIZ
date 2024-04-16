@@ -6,6 +6,7 @@ import Signup from '../pages/signup';
 import Getstart from '../pages/getstart';
 import Login from '../pages/login';
 import Register from '../pages/register';
+import Starttrade from '../pages/starttrade';
 
 function Router () {
     return (
@@ -18,6 +19,8 @@ function Router () {
         <Route path='/register' element={<Register/>} />
         <Route path='/signup' element={<Signup/>} />
         <Route path='/getstart' element={<Getstart/>} />
+        <Route path='/starttrade' element={<Starttrade/>} />
+        
         </Routes>
     </div>
   )
