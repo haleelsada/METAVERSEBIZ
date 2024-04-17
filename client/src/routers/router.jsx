@@ -3,10 +3,10 @@ import {Routes, Route, Navigate} from 'react-router-dom';
 import Home from '../pages/home';
 import Signin from '../pages/signin';
 import Signup from '../pages/signup';
-import Getstart from '../pages/getstart';
 import Login from '../pages/login';
 import Register from '../pages/register';
 import Starttrade from '../pages/starttrade';
+import Trade from '../pages/trade';
 
 function Router () {
     return (
@@ -18,7 +18,7 @@ function Router () {
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Register/>} />
         <Route path='/signup' element={<Signup/>} />
-        <Route path='/getstart' element={<Getstart/>} />
+        <Route path='/trade' element={<Trade/>} />
         <Route path='/starttrade' element={<Starttrade/>} />
         
         </Routes>

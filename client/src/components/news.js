@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 import './news.css'
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 function News() {
   const [newsData, setNewsData] = useState([]);
@@ -33,7 +31,6 @@ function News() {
 
   return (   
     <Container className="mt-5" style={{display:'flex', margin: '0px auto'}}>
-      <h2 className="text-center mb-4">Latest News</h2>
       <div className="news-container" style={{display:'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', margin: '0px'}}>
         {newsData.map((news, index) => (
             <a

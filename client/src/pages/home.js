@@ -1,7 +1,9 @@
 import React from 'react'
 import '../styles/home.css';
 import Header from '../components/header';
+import TickerTape from '../components/ticker-tape';
 import Footer from '../components/footer';
+import NewNews from '../components/new-news';
 import News from '../components/news';
 import tradingImage from '../resources/metaversebiz-22.jpg';
 // import {  } from 'react-icons/fa';
@@ -11,6 +13,7 @@ function Home () {
   return (
   <div className='home-container'>
     <Header />
+    <TickerTape />
     <div className="home-bg">
         <div className='home-front'>
         <div className='home-contents'>
@@ -18,8 +21,8 @@ function Home () {
             <h2 className='home-contents-subtitle'>master the stocks right here!</h2>
                 </div>  
             </div>
-            <a href='/getstart'>
-            <button class="getstart">Get started</button>
+            <a href='/trade'>
+            <button class="getstart">Start Trading</button>
             </a>
             <div className='bg-image-1'>
             <img className="trade" alt="trade" src={tradingImage} style={{ objectFit: "cover"}}/>
@@ -55,10 +58,11 @@ function Home () {
     </div>
     <div>
     <h1 className='home-market-title'>Explore Market News</h1>
-    <h3 className='home-market-subtitle'>Learn how global markets work, how they are interrelated, and<br></br>
-    how individual companies and sectors can influence their movements.</h3>
+    {/* <h3 className='home-market-subtitle'>Learn how global markets work, how they are interrelated, and<br></br>
+    how individual companies and sectors can influence their movements.</h3> */}
     </div>
-    <News />
+    {/* <News /> */}
+    <NewNews />
     <Footer />
     </div>
     
