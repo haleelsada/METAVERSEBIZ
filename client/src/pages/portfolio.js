@@ -3,15 +3,15 @@ import Header from '../components/header';
 import Navbar from '../components/navbar';
 import TickerTape from '../components/ticker-tape';
 
-function Trade() {
+function Portfolio() {
   
   return (
-    <div className='trade-container'>
-     <Header />
+    <div className='portfolio-container'>
+      <Header />
       <TickerTape />
       <Navbar />
     </div>
   );
 }
 
-export default Trade;
+export default Portfolio;

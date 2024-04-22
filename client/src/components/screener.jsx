@@ -35,11 +35,11 @@ function Screener() {
       style={{ 
         marginTop: '20px', 
         marginBottom: '20px',
-        width: '80%', // Adjusted width to match script configuration
+        width: '80%', 
         marginLeft: 'auto', 
         marginRight: 'auto', 
         display: 'flex',
-        justifyContent: 'center', // Centering content horizontally
+        justifyContent: 'center', 
       }}
     />
   );

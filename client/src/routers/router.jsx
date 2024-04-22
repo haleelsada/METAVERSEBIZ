@@ -5,8 +5,11 @@ import Signin from '../pages/signin';
 import Signup from '../pages/signup';
 import Login from '../pages/login';
 import Register from '../pages/register';
-import Starttrade from '../pages/starttrade';
+import Starttrade from '../pages/start-trade';
+import Research from '../pages/research';
 import Trade from '../pages/trade';
+import Learn from '../pages/learn';
+import Portfolio from '../pages/portfolio';
 
 function Router () {
     return (
@@ -18,8 +21,11 @@ function Router () {
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Register/>} />
         <Route path='/signup' element={<Signup/>} />
-        <Route path='/trade' element={<Trade/>} />
+        <Route path='/research' element={<Research/>} />
         <Route path='/starttrade' element={<Starttrade/>} />
+        <Route path='/trade' element={<Trade/>} />
+        <Route path='/learn' element={<Learn/>} />
+        <Route path='/portfolio' element={<Portfolio/>} />
         
         </Routes>
     </div>
