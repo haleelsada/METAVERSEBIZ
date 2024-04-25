@@ -7,7 +7,7 @@
     position: sticky;
     width: 100vw;
     top: 0; left: 0; 
-    background-color: #ffffff;
+    background-color: #222222;
     height: 60px;
     display: flex;
     align-items: center;
@@ -19,7 +19,7 @@
     position: sticky;
     width: 50vw;
     top: 0; left: 0; 
-    background-color: #ffffff;
+    background-color: #222222;
     height: 60px;
     display: flex;
     align-items: center;
@@ -32,15 +32,15 @@
     align-items: center;
     border-radius: 3px;
     border:none;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #222222;
+    color: #ffffff;
     cursor: pointer;
 }
 
 .navbar-button:hover {
 
-    color: #ffffff;
-    background-color: #000000;
+    color: #000000;
+    background-color: #fdd835;
     
 }
 
@@ -50,10 +50,11 @@
     padding: 5px 10px; 
 }
 .trade-page {
-    background-color: #ffed4f; 
+    background-color: #fdd835;
+    color: #000000;
   }
   .trade-page:hover{
-    background-color: #ffed4f;
+    background-color: #fdd835;
     color: #000000;
   }
   

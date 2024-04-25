@@ -33,7 +33,7 @@
 .getstart{
   border-radius: 7px;
   outline: none;
-  background-color:#00b386;
+  background-color:#fdd835;
   color: #000000;
   cursor: pointer;
   border: none;
@@ -44,7 +44,7 @@
   font-weight: 600;
 }
 .getstart:hover{
-  background-color:#00e7ad;
+  background-color:#fdf335;
   transition: 0.2s;
 }
 .home-getstarted-box{
@@ -65,7 +65,7 @@
 .getstarted-options{
   width: 300px;
   height: 250px;
-  border:5px solid #00b386;
+  border:5px solid #fdd835;
   border-radius: 10px;
   margin: 70px 4vw 100px 4vw;
   color: #ffffff;
@@ -74,12 +74,12 @@
   padding: 0px 15px;
 }
 .getstarted-options:hover{
-  border:5px solid #00e7ad;
-  box-shadow: 5px 5px 10px 0px #00e7ad7e ;
+  border:5px solid #fdf335;
+  box-shadow: 5px 5px 10px 0px #fdf3357e ;
 }
 
 .getstarted-options:hover .getstarted-options-title{
-  color: #00b386;
+  color: #fdd835;
 }
 
 .bg-image-1{

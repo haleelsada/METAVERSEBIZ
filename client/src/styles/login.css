@@ -5,7 +5,7 @@
     margin: 0px auto;
 }
  .login-left-bg{
-    background-color: #00b386;
+    background-color: #fdd835;
     background-image: url("signinorregister-bg.png");
     background-size: cover;
     width: 600px;
@@ -76,7 +76,7 @@
     &:focus {
     outline: none !important;
     margin-top: 10px;
-    border-bottom: 1px solid #00b386;
+    border-bottom: 1px solid #fdd835;
     }
 }
 .login-password-box{
@@ -96,7 +96,7 @@
     &:focus {
     outline: none !important;
     margin-top: 10px;
-    border-bottom: 1px solid #00b386;
+    border-bottom: 1px solid #fdd835;
     }
 }
 .login-button-box{
@@ -113,8 +113,8 @@
     font-weight: 600;
     border: none;
     border-radius: 7px;
-    background-color: #00b386;
-    color: #ffffff;
+    background-color: #fdd835;
+    color: #000000;
 }
 .login-no-account{
     display: flex;
@@ -125,6 +125,6 @@
     color: #000000;
 }
 .login-create-account-link{
-    color:#00b386;
+    color:#fdd835;
 }
 

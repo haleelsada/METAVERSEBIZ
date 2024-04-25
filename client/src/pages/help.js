@@ -2,20 +2,16 @@ import React from 'react';
 import Header from '../components/header';
 import Navbar from '../components/navbar';
 import TickerTape from '../components/ticker-tape';
-import Search from '../components/search';
 
-function Trade() {
+function Help() {
   
   return (
-    <div className='trade-container'>
-     <Header />
+    <div className='help-container'>
+      <Header />
       <TickerTape />
       <Navbar />
-      <div>
-      <Search />
-      </div>
     </div>
   );
 }
 
-export default Trade;
+export default Help;

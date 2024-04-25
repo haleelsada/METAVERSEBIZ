@@ -8,6 +8,7 @@ import Research from '../pages/research';
 import Trade from '../pages/trade';
 import Learn from '../pages/learn';
 import Portfolio from '../pages/portfolio';
+import Help from '../pages/help';
 
 function Router () {
     return (
@@ -21,6 +22,7 @@ function Router () {
         <Route path='/starttrade' element={<Starttrade/>} />
         <Route path='/trade' element={<Trade/>} />
         <Route path='/learn' element={<Learn/>} />
+        <Route path='/help' element={<Help/>} />
         <Route path='/portfolio' element={<Portfolio/>} />
         
         </Routes>

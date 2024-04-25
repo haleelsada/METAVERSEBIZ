@@ -33,6 +33,14 @@ function Navbar () {
                 </button>
             </a>
 
+            <a href="/help">
+                <button className={`navbar-button ${location.pathname === '/help' ? 'trade-page' : ''}`}>
+                    <div className='navbar-cntr'>
+                        <span>HELP</span>
+                    </div>
+                </button>
+            </a>
+
             <a href="/portfolio">
                 <button className={`navbar-button ${location.pathname === '/portfolio' ? 'trade-page' : ''}`}>
                     <div className='navbar-cntr'>
