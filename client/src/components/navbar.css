@@ -1,14 +1,26 @@
 .navbar span{
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     
 }
-.navbar {
+.navbar-bg{
     position: sticky;
     width: 100vw;
     top: 0; left: 0; 
-    background-color: #fff;
-    height: 50px;
+    background-color: #ffffff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-around;
+    z-index: 9998;
+}
+.navbar {
+    position: sticky;
+    width: 50vw;
+    top: 0; left: 0; 
+    background-color: #ffffff;
+    height: 60px;
     display: flex;
     align-items: center;
     margin: 0 auto;
@@ -16,69 +28,20 @@
     z-index: 9999;
 }
 
-
-.navbar-portfolio{
-    border-radius: 5px;
+.navbar-button{
     align-items: center;
-    border: none;
-    outline: none;
-    background-color: #fff;
+    border-radius: 3px;
+    border:none;
+    background-color: #ffffff;
     color: #000000;
     cursor: pointer;
 }
 
-.navbar-portfolio:hover {
-    
-    
-    color: #000000;
-    background-color: #00e7ad63;
-    border-radius: 5px;
-    transition: 0.2s;
-}
-.navbar-trade{
-    border-radius: 5px;
-    align-items: center;
-    border: none;
-    outline: none;
-    background-color: #fff;
-    color: #000000;
-    cursor: pointer;
-}
+.navbar-button:hover {
 
-.navbar-trade:hover {
+    color: #ffffff;
+    background-color: #000000;
     
-    
-    color: #000000;
-    background-color: #00e7ad63;
-    border-radius: 5px;
-    transition: 0.2s;
-}
-
-.navbar-learn {
-    border-radius: 5px;
-    align-items: center;
-    border: none;
-    outline: none;
-    background-color: #fff;
-    color: #000000;
-    cursor: pointer;
-}
-
-.navbar-learn :hover {
-    
-    color: #000000;
-    background-color: #00e7ad63;
-    border-radius: 5px;
-    transition: 0.2s;
-}
-.navbar-research{
-    border-radius: 5px;
-    align-items: center;
-    border: none;
-    outline: none;
-    background-color: #fff;
-    color: #000000;
-    cursor: pointer;
 }
 
 .navbar-cntr{
@@ -86,11 +49,11 @@
     align-items: center;
     padding: 5px 10px; 
 }
-.navbar-research:hover {
-    
-    
+.trade-page {
+    background-color: #ffed4f; 
+  }
+  .trade-page:hover{
+    background-color: #ffed4f;
     color: #000000;
-    background-color: #00e7ad63;
-    border-radius: 5px;
-    transition: 0.2s;
-}
+  }
+  

@@ -1,8 +1,6 @@
 import React from 'react'
 import {Routes, Route, Navigate} from 'react-router-dom';
 import Home from '../pages/home';
-import Signin from '../pages/signin';
-import Signup from '../pages/signup';
 import Login from '../pages/login';
 import Register from '../pages/register';
 import Starttrade from '../pages/start-trade';
@@ -17,10 +15,8 @@ function Router () {
       <Routes>
         <Route path='/' element={<Navigate to='/home'/>} />
         <Route path='/home' element={<Home/>} /> 
-        <Route path='/signin' element={<Signin/>} /> 
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Register/>} />
-        <Route path='/signup' element={<Signup/>} />
         <Route path='/research' element={<Research/>} />
         <Route path='/starttrade' element={<Starttrade/>} />
         <Route path='/trade' element={<Trade/>} />
