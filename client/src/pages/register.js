@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import '../styles/register.css';
-import GoogleLogin from 'react-google-login';
+// import GoogleLogin from 'react-google-login';
 const Register = () => {
   const [isemailFocused, setIsemailFocused] = useState(false);
   const [ispasswordFocused, setIspasswordFocused] = useState(false);
@@ -18,7 +18,7 @@ const Register = () => {
         </div>
         </div>
         <div className='register-register-options'>
-        <GoogleLogin
+        {/* <GoogleLogin
               clientId="108490793456-0flm4qh8ek4cb4krt7e06980o4sjvado.apps.googleusercontent.com"
               render={renderProps => (
                   <div className="register-google-box">
@@ -30,7 +30,7 @@ const Register = () => {
               )}
               buttonText="register"
               cookiePolicy={'single_host_origin'}
-            />
+            /> */}
             <div className='register-or-box'>
               <div className='register-or-line'>
               </div>
