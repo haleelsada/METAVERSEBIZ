@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 
 function News() {
   const [newsData, setNewsData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   // Make API call to news API
   async function getNewsData() {
