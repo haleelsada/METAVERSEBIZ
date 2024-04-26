@@ -6,9 +6,17 @@ const Login = () => {
   const [ispasswordFocused, setIspasswordFocused] = useState(false);
   
   return (
+    <div className='login-cont'>
     <div className='login-bg'>
       <div className='login-left-bg'>
-
+        <div className='login-left-text-1'>
+        <h1>Learn, Practice, <br></br>Invest.</h1>
+        </div>
+        <div className='login-left-box'></div>
+        <div className='login-left-text-2'>
+        <div className='login-left-text-input'>Dotstock,</div>
+        <div className='login-left-text-input'>the stock master.</div>
+        </div>
       </div>
       <div className='login-right-bg'>
         <div className='login-title-box'>
@@ -38,11 +46,11 @@ const Login = () => {
               </div>
             </div>
             <div className='login-email-box'>
-              <label htmlFor="login-email" className='login-email-label' style={{ color: isemailFocused ? '#00b386' : '#b5b5b5' }}>Email Address </label>
+              <label htmlFor="login-email" className='login-email-label' style={{ color: isemailFocused ? '#fdd835' : '#b5b5b5' }}>Email Address </label>
               <input type='text' name='login-email' className='login-email-input' onFocus={() => setIsemailFocused(true)} onBlur={() => setIsemailFocused(false)}></input>
             </div>
             <div className='login-password-box'>
-              <label htmlFor="login-password" className='login-password-label' style={{ color: ispasswordFocused ? '#00b386' : '#b5b5b5' }}>Password </label>
+              <label htmlFor="login-password" className='login-password-label' style={{ color: ispasswordFocused ? '#fdd835' : '#b5b5b5' }}>Password </label>
               <input type='text' name='login-password' className='login-password-input' onFocus={() => setIspasswordFocused(true)} onBlur={() => setIspasswordFocused(false)}></input>
             </div>
             <div className='login-button-box'>
@@ -55,7 +63,7 @@ const Login = () => {
             </div>
       </div>
     </div>
-        
+    </div>   
            
   )
 }

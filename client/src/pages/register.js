@@ -5,16 +5,25 @@ const Register = () => {
   const [isemailFocused, setIsemailFocused] = useState(false);
   const [ispasswordFocused, setIspasswordFocused] = useState(false);
   const [isconfpasswordFocused, setIsconfpasswordFocused] = useState(false);
+  const [isusernameFocused, setIsusernameFocused] = useState(false);
 
   return (
+    <div className='register-cont'>
     <div className='register-bg'>
       <div className='register-left-bg'>
-
+      <div className='register-left-text-1'>
+        <h1>Learn, Practice, <br></br>Invest.</h1>
+        </div>
+        <div className='register-left-box'></div>
+        <div className='register-left-text-2'>
+        <div className='register-left-text-input'>Dotstock,</div>
+        <div className='register-left-text-input'>the stock master.</div>
+        </div>
       </div>
       <div className='register-right-bg'>
         <div className='register-title-box'>
         <div className='register-title'>
-          <span>Welcome Back</span>
+          <span>Welcome to Dotstock</span>
         </div>
         </div>
         <div className='register-register-options'>
@@ -38,16 +47,20 @@ const Register = () => {
               <div className='register-or-line'>
               </div>
             </div>
-            <div className='register-email-box'>
-              <label htmlFor="register-email" className='register-email-label' style={{ color: isemailFocused ? '#00b386' : '#b5b5b5' }}>Email Address </label>
+            <div className='register-username-box'>
+              <label htmlFor="register-username" className='register-username-label' style={{ color: isusernameFocused ? '#fdd835' : '#b5b5b5' }}>Username </label>
+              <input type='text' name='register-username' className='register-username-input' onFocus={() => setIsusernameFocused(true)} onBlur={() => setIsusernameFocused(false)}></input>
+            </div>
+            <div className='register-username-box'>
+              <label htmlFor="register-username" className='register-email-label' style={{ color: isemailFocused ? '#fdd835' : '#b5b5b5' }}>Email Address </label>
               <input type='text' name='register-email' className='register-email-input' onFocus={() => setIsemailFocused(true)} onBlur={() => setIsemailFocused(false)}></input>
             </div>
             <div className='register-password-box'>
-              <label htmlFor="register-password" className='register-password-label' style={{ color: ispasswordFocused ? '#00b386' : '#b5b5b5' }}>Password </label>
+              <label htmlFor="register-password" className='register-password-label' style={{ color: ispasswordFocused ? '#fdd835' : '#b5b5b5' }}>Password </label>
               <input type='text' name='register-password' className='register-password-input' onFocus={() => setIspasswordFocused(true)} onBlur={() => setIspasswordFocused(false)}></input>
             </div>
             <div className='register-confpassword-box'>
-              <label htmlFor="register-confpassword" className='register-confpassword-label' style={{ color: isconfpasswordFocused ? '#00b386' : '#b5b5b5' }}>Confirm Password </label>
+              <label htmlFor="register-confpassword" className='register-confpassword-label' style={{ color: isconfpasswordFocused ? '#fdd835' : '#b5b5b5' }}>Confirm Password </label>
               <input type='text' name='register-confpassword' className='register-confpassword-input' onFocus={() => setIsconfpasswordFocused(true)} onBlur={() => setIsconfpasswordFocused(false)}></input>
             </div>
             <div className='register-button-box'>
@@ -60,7 +73,7 @@ const Register = () => {
             </div>
       </div>
     </div>
-        
+    </div>   
            
   )
 }
