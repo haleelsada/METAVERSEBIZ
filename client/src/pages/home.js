@@ -30,14 +30,7 @@ function Home () {
             <div className='home-getstarted-box'>
                 <h1 className='home-getstarted-title'>Start Your Dotstock Journey</h1>
             <div className='home-getstarted'>
-            <a href='/practice'>
-                <div className='getstarted-options'>
-                    <h1 className='getstarted-options-title'>Practice Crypto &rarr;</h1>
-                    <p>Practice trading trading involves analyzing market trends and 
-                        testing strategies in simulated environments to develop skills and knowledge. </p>
-                </div>
-                </a>
-                <a href='/learn'>
+            <a href='/learn'>
                 <div className='getstarted-options'>
                     <h1 className='getstarted-options-title'>Learn Crypto &rarr;</h1>
                     <p>Learning how to grasp technical concepts and engaging 
@@ -45,7 +38,14 @@ function Home () {
                          real-world application.</p>
                 </div>
                 </a>
-                <a href='/progress'>
+            <a href='/trade'>
+                <div className='getstarted-options'>
+                    <h1 className='getstarted-options-title'>Practice Crypto &rarr;</h1>
+                    <p>Practice trading trading involves analyzing market trends and 
+                        testing strategies in simulated environments to develop skills and knowledge. </p>
+                </div>
+                </a>
+                <a href='/portfolio'>
                 <div className='getstarted-options'>
                    <h1 className='getstarted-options-title'>Check Progress &rarr;</h1>
                    <p>Checking progress in crypto entails reviewing transaction history for
