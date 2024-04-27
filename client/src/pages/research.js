@@ -12,12 +12,14 @@ function Research() {
       <Header />
       <TickerTape />
       <Navbar />
-      <div>
-        <h1>Trading Chart</h1>
+      <div style={{marginBottom: '100px'}}>
+        <div className='research-map-title' style={{marginLeft: '10vw',marginTop:'50px', color: '#ffffff', fontSize: '20px', 
+        fontWeight: '600'}}>Trading Chart</div>
         <Map />
       </div>
-      <div>
-      <h1>Screener Table</h1>
+      <div style={{marginBottom: '100px'}}>
+      <div className='research-screener-title' style={{marginLeft: '10vw',marginTop:'50px', color: '#ffffff', fontSize: '20px', 
+        fontWeight: '600'}}>Screener Table</div>
       <Screener />
       </div>
     </div>

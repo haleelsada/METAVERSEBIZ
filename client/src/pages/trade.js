@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/header';
 import Navbar from '../components/navbar';
 import TickerTape from '../components/ticker-tape';
-import Search from '../components/search';
+import SearchSymbol from '../components/search-symbol';
 
 function Trade() {
   
@@ -12,7 +12,7 @@ function Trade() {
       <TickerTape />
       <Navbar />
       <div>
-      <Search />
+      <SearchSymbol />
       </div>
     </div>
   );

@@ -186,6 +186,9 @@
     background-color: #fdd835;
     color: #000000;
 }
+.register-button-click:hover{
+    background-color: #fdf335;
+}
 .register-no-account{
     display: flex;
     margin: 20px 0px 0px 125px;

@@ -17,7 +17,7 @@ function Home () {
     <div className="home-bg">
         <div className='home-front'>
         <div className='home-contents'>
-            <h1 className='home-contents-title'>Learn | Practice | Invest<br></br></h1>
+            <h1 className='home-contents-title'>Learn, practice, invest.<br></br></h1>
             <h2 className='home-contents-subtitle'>master the stocks right here!</h2>
                 </div>  
             </div>

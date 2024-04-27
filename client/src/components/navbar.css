@@ -39,8 +39,7 @@
 
 .navbar-button:hover {
 
-    color: #000000;
-    background-color: #fdd835;
+    border: 1px solid #fdd835;
     
 }
 
@@ -50,11 +49,11 @@
     padding: 5px 10px; 
 }
 .trade-page {
-    background-color: #fdd835;
-    color: #000000;
+    color: #fdd835;
   }
   .trade-page:hover{
-    background-color: #fdd835;
-    color: #000000;
+    background-color: #222222;
+    border: none;
+    color: #fdd835;
   }
   
