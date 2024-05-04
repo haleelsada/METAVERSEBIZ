@@ -85,11 +85,11 @@ WSGI_APPLICATION = 'dotstock.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        "NAME": "mydatabase",
-        "USER": "user",
-        "PASSWORD": "password",
-        "HOST": "127.0.0.1",
-        "PORT": "3306",
+        "NAME": "railway",
+        "USER": "root",
+        "PASSWORD": "jdqphLWnSxNbONnPYzysMQEqoWEYgvha",
+        "HOST": "roundhouse.proxy.rlwy.net",
+        "PORT": "47484",
     }
 }
 
