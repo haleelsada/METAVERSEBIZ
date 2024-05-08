@@ -73,44 +73,8 @@
     color: #ffffff;
     font-weight: 600;
 }
-.login-google-box{
-    width: 350px;
-    margin: 30px auto;
-    display: flex;
-    cursor: pointer;
-    border: 1px solid #b5b5b5;
-    border-radius: 7px;
-}
-.login-google-button{
-    margin: 0px auto;
-    display: flex;
-    
-}
-.login-google-icon{
-    width: 30px;
-    padding: 10px;
-}
-.login-google-text{
-    font-weight: 500;
-    padding: 15px 0px 0px 0px;
-}
-.login-or-line{
-    border-top: 1px solid #b5b5b5;
-    width: 65px;
-    margin-top: 10px;
-}
-.login-or-box{
-    display: flex;
-    margin-top: 40px;
-    justify-content: center;
-}
-.login-or-text{
-    font-weight: 500;
-    padding: 0px 100px;
-    color: #ffffff;
-}
 .login-email-box{
-    margin-top: 30px;
+    margin-top: 50px;
 }
 .login-email-label{
    margin: 0px 0px 0px 125px;
