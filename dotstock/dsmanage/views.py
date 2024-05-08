@@ -118,7 +118,7 @@ class Chat(APIView):
     Manage chatbot
     """
     def __init__(self):
-        genai.configure(api_key='AIzaSyAkwoiE1lSBQzq284rMboIrw0OfockdWE0')
+        genai.configure(api_key='API_KEY')
         self.model = genai.GenerativeModel('gemini-pro')
         self.prompt="you are a intelligent AI Bot, talk with Human and answer his queries briefly"
 
