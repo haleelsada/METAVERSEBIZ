@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Roboto');
+
 body {
   margin: 0;
   background-color: #000000;
@@ -6,6 +8,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
@@ -19,4 +22,23 @@ input::placeholder {
 a{
   text-decoration: none;
   font-weight: 600;
+}
+@keyframes width-animation {
+  from {width: 70px;}
+  to {width: 10px;}
+}
+@keyframes switch {
+ 
+  0%,
+  5%,
+  100% {
+      filter: blur(0px);
+      opacity: 1;
+  }
+
+  50%,
+  80% {
+      filter: blur(0px);
+      opacity: 0;
+  }
 }

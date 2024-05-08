@@ -1,19 +1,68 @@
+.login-cont{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    background: url("dotstock-bg-2.png") no-repeat;
+    background-size: cover;
+
+}
+.login-cont input{
+    color: #ffffff;
+}
 .login-bg{
     width: 1200px;
     height: 600px;
     display: flex;
-    margin: 0px auto;
+    margin: 100px auto;
 }
  .login-left-bg{
-    background-color: #00b386;
+    background-color: #fdd835;
     background-image: url("signinorregister-bg.png");
     background-size: cover;
+    border-radius: 10px 0px 0px 10px;
     width: 600px;
    
 }
+.login-left-text-1{
+    display: flex;
+    color: #222222;
+    justify-content: flex-start;
+    margin: 70px 0px 100px 50px;
+}
+.login-left-box{
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    margin: 250px 0px 0px 50px;
+    background-color: #222222;
+    animation: width-animation 1s linear 0s infinite alternate-reverse none;
+}
+.login-left-text-2{
+    margin: 0px 0px 0px 0px;
+    position: relative;
+}
+.login-left-text-input{
+    position: absolute;
+    left: 8%;
+    font-size: 34px;
+    font-weight: 700;
+    color: #222222;
+    animation: switch 4s infinite ease-in-out;
+    
+}
+.login-left-text-input:nth-child(1) {
+    animation-delay: 2s;
+}
+ 
+.login-left-text-input:nth-child(2) {
+    animation-delay: 8s;
+}
+
 .login-right-bg{
-    background-color:#ffffff;
+    background-color:#222222;
     width: 600px;
+    border-radius: 0px 10px 10px 0px;
 }
 .login-title-box{
     display: flex;
@@ -21,46 +70,11 @@
 .login-title{
     font-size: 36px;
     margin: 45px auto 0px auto;
-    color: #000000;
+    color: #ffffff;
     font-weight: 600;
 }
-.login-google-box{
-    width: 350px;
-    margin: 30px auto;
-    display: flex;
-    cursor: pointer;
-    border: 1px solid #b5b5b5;
-    border-radius: 7px;
-}
-.login-google-button{
-    margin: 0px auto;
-    display: flex;
-    
-}
-.login-google-icon{
-    width: 30px;
-    padding: 10px;
-}
-.login-google-text{
-    font-weight: 500;
-    padding: 15px 0px 0px 0px;
-}
-.login-or-line{
-    border-top: 1px solid #b5b5b5;
-    width: 65px;
-    margin-top: 10px;
-}
-.login-or-box{
-    display: flex;
-    margin-top: 40px;
-    justify-content: center;
-}
-.login-or-text{
-    font-weight: 500;
-    padding: 0px 100px;
-}
 .login-email-box{
-    margin-top: 30px;
+    margin-top: 50px;
 }
 .login-email-label{
    margin: 0px 0px 0px 125px;
@@ -69,6 +83,7 @@
     width: 350px;
     display: flex;
     justify-content: center;
+    background-color: #222222;
     margin: 0px auto;
     cursor: text;
     border: none;
@@ -76,7 +91,7 @@
     &:focus {
     outline: none !important;
     margin-top: 10px;
-    border-bottom: 1px solid #00b386;
+    border-bottom: 1px solid #fdd835;
     }
 }
 .login-password-box{
@@ -89,6 +104,7 @@
     width: 350px;
     display: flex;
     justify-content: center;
+    background-color: #222222;
     margin: 0px auto;
     cursor: text;
     border: none;
@@ -96,7 +112,7 @@
     &:focus {
     outline: none !important;
     margin-top: 10px;
-    border-bottom: 1px solid #00b386;
+    border-bottom: 1px solid #fdd835;
     }
 }
 .login-button-box{
@@ -113,18 +129,21 @@
     font-weight: 600;
     border: none;
     border-radius: 7px;
-    background-color: #00b386;
-    color: #ffffff;
+    background-color: #fdd835;
+    color: #000000;
+}
+.login-button-click:hover{
+    background-color: #fdf335;
 }
 .login-no-account{
     display: flex;
-    margin: 10px 0px 0px 125px;
+    margin: 20px 0px 0px 125px;
     cursor: pointer;
 }
 .login-create-account{
-    color: #000000;
+    color: #ffffff;
 }
 .login-create-account-link{
-    color:#00b386;
+    color:#fdd835;
 }
 

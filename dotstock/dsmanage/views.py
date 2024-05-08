@@ -31,14 +31,19 @@ class SignupView(APIView):
 
 class LoginView(APIView):
     def post(self, request):
-        username = request.data.get('username')
+        usermail = request.data.get('email')
         password = request.data.get('password')
-        user = authenticate(username=username, password=password)
-        if user:
-            token, _ = Token.objects.get_or_create(user=user)
-            return Response({'token': token.key})
-        else:
-            return Response({"error": "Wrong Credentials"}, status=status.HTTP_400_BAD_REQUEST)
+        #user = authenticate(username=username, password=password)
+        print(usermail,password)
+        try:
+            user = User.objects.get(email=usermail)
+            user = authenticate(username=user.username, password=password)
+            if user:
+                token, _ = Token.objects.get_or_create(user=user)
+                return Response({'token': token.key})
+            else:
+                return Response({"error": "Wrong Credentials, please try again"}, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e: return Response({"error":str(e)},status=status.HTTP_400_BAD_REQUEST)
 
 
 

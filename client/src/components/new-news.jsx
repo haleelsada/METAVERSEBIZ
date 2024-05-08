@@ -15,9 +15,10 @@ function NewNews() {
         "isTransparent": true,
         "displayMode": "adaptive",
         "width": "1440",
-        "height": "1080",
+        "height": "500",
         "colorTheme": "dark",
-        "locale": "en"
+        "locale": "en",
+        "infiniteScroll": false
       });
 
       containerRef.current.appendChild(script);

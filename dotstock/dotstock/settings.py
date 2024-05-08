@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'corsheaders',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dsmanage.apps.DsmanageConfig',
@@ -47,6 +48,8 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -85,11 +88,11 @@ WSGI_APPLICATION = 'dotstock.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        "NAME": "mydatabase",
-        "USER": "user",
-        "PASSWORD": "password",
-        "HOST": "127.0.0.1",
-        "PORT": "3306",
+        "NAME": "railway",
+        "USER": "root",
+        "PASSWORD": "YOUR_PASSWORD",
+        "HOST": "roundhouse.proxy.rlwy.net",
+        "PORT": "47484",
     }
 }
 
@@ -134,3 +137,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',  # Add your frontend origin here
+]
+
+CORS_ALLOW_CREDENTIALS = True
+

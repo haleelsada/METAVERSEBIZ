@@ -4,8 +4,8 @@ import Header from '../components/header';
 import TickerTape from '../components/ticker-tape';
 import Footer from '../components/footer';
 import NewNews from '../components/new-news';
-import News from '../components/news';
-import tradingImage from '../resources/metaversebiz-22.jpg';
+// import News from '../components/news';
+import tradingImage from '../resources/dotstock-bg-4.jpg';
 // import {  } from 'react-icons/fa';
 
 function Home () {
@@ -17,7 +17,7 @@ function Home () {
     <div className="home-bg">
         <div className='home-front'>
         <div className='home-contents'>
-            <h1 className='home-contents-title'>Learn | Practice | Invest<br></br></h1>
+            <h1 className='home-contents-title'>Learn, practice, invest.<br></br></h1>
             <h2 className='home-contents-subtitle'>master the stocks right here!</h2>
                 </div>  
             </div>
@@ -30,14 +30,7 @@ function Home () {
             <div className='home-getstarted-box'>
                 <h1 className='home-getstarted-title'>Start Your Dotstock Journey</h1>
             <div className='home-getstarted'>
-            <a href='/practice'>
-                <div className='getstarted-options'>
-                    <h1 className='getstarted-options-title'>Practice Crypto &rarr;</h1>
-                    <p>Practice trading trading involves analyzing market trends and 
-                        testing strategies in simulated environments to develop skills and knowledge. </p>
-                </div>
-                </a>
-                <a href='/learn'>
+            <a href='/learn'>
                 <div className='getstarted-options'>
                     <h1 className='getstarted-options-title'>Learn Crypto &rarr;</h1>
                     <p>Learning how to grasp technical concepts and engaging 
@@ -45,7 +38,14 @@ function Home () {
                          real-world application.</p>
                 </div>
                 </a>
-                <a href='/progress'>
+            <a href='/trade'>
+                <div className='getstarted-options'>
+                    <h1 className='getstarted-options-title'>Practice Crypto &rarr;</h1>
+                    <p>Practice trading trading involves analyzing market trends and 
+                        testing strategies in simulated environments to develop skills and knowledge. </p>
+                </div>
+                </a>
+                <a href='/portfolio'>
                 <div className='getstarted-options'>
                    <h1 className='getstarted-options-title'>Check Progress &rarr;</h1>
                    <p>Checking progress in crypto entails reviewing transaction history for
