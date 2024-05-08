@@ -8,5 +8,5 @@ urlpatterns = [
     path('user/<int:user_id>', views.UserView.as_view(), name='user_details'),
     path('transaction/<int:user_id>', views.TransactionView.as_view(), name='transaction_details'),
     path('transaction', views.TransactionView.as_view(), name='transaction_details'),
-    path('topic/<str:topicname>', views.TopicView.as_view(), name='topics'),
+    path('chat/<int:userid>', views.Chat.as_view(), name='chats'),
 ]

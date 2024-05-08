@@ -26,23 +26,15 @@ class Transaction(models.Model):
     def __str__(self):
         return f"{self.transaction_name} by {self.user.username} at {self.transaction_time}"
 
-# Model for Topics
-class Topic(models.Model):
-    name = models.CharField(max_length=200)
-    description = models.TextField()
-
-    def __str__(self):
-        return self.name
 
 # Model for Chatbot Conversations
 class Chatbot(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    question = models.TextField()
-    answer = models.TextField()
-    conversation_time = models.DateTimeField(default=timezone.now)
+    chat = models.TextField()
+    
 
     def __str__(self):
-        return f"Conversation with {self.user.username} at {self.conversation_time}"
+        return f"{self.user.username}"
 
 
 @receiver(post_save, sender=User)

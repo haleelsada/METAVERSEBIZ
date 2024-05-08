@@ -3,13 +3,16 @@ from django.http import HttpResponse
 from rest_framework import serializers, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .models import User, Transaction, Topic
+from .models import User, Transaction, Chatbot
 from .serializers import UserSerializer
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login
 from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.authtoken.models import Token
 from rest_framework.permissions import IsAuthenticated
+import google.generativeai as genai
+
+
 
 class Index(APIView):
     #permission_classes = [IsAuthenticated]
@@ -105,21 +108,49 @@ class TransactionView(APIView):
             raise e
             return Response('transaction failed with error :'+str(e))
     
+class Chat(APIView):
+    """
+    Manage chatbot
+    """
+    def __init__(self):
+        genai.configure(api_key='AIzaSyAkwoiE1lSBQzq284rMboIrw0OfockdWE0')
+        self.model = genai.GenerativeModel('gemini-pro')
+        self.prompt="you are a intelligent AI Bot, talk with Human and answer his queries briefly"
 
-class TopicView(APIView):
-    """
-    Deal with different topics
-    """
-    def get(self, request, topicname, format=None):
+    def post(self, request, userid, format=None):
         try:
-            if topicname=='all':
-                topics = [i.name for i in Topic.objects.all()]
-                return Response(topics)
+            if Chatbot.objects.filter(user__id=userid).exists():
+                user = Chatbot.objects.get(user__id=userid)
+                chat = user.chat
+                question = request.data.get('question')
+                chat = chat+"\nHuman:"+question+ "\nAI:"
+                response = self.model.generate_content(self.prompt+chat)
+                chat = chat+response.text
+                user.chat = chat
+                user.save()
+                return Response({'Response':response.text}, status=status.HTTP_200_OK)
             else:
-                topic = Topic.objects.get(name=topicname)
-                if not topic:
-                    return Response("Topic not found")
-                data = {topicname: topic.description}
-                return Response(data)
+                user=User.objects.get(pk=userid)
+                question = request.data.get('question')
+                chat = "\nHuman:"+question+ "\nAI:"
+                response = self.model.generate_content(self.prompt+chat)
+                chat = chat+response.text
+                user = Chatbot(user=user,chat=chat)
+                user.save()
+                return Response({'Response':response.text,"chatid":user.id}, status=status.HTTP_201_CREATED)
+
         except Exception as e:
-            return Response({'Error':str(e)})
+            return Response({'Error':str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)    
+
+    def get(self, request, userid, format=None):
+        try:
+            if Chatbot.objects.filter(user__id=userid).exists():
+                user = Chatbot.objects.get(user__id=userid)
+                chat = user.chat
+                return Response({'chat':chat}, status=status.HTTP_200_OK)
+            else:
+                return Response({'chat':'',}, status=status.HTTP_404_NOT_FOUND)
+
+        except Exception as e:
+            return Response({'Error':str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)       
+
