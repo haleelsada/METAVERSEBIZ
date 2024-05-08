@@ -23,6 +23,3 @@ This application is built using a robust combination of Django and Node.js:
 This simulation app is perfect for beginners who have limited or no knowledge of stock markets as well as for more experienced individuals looking to try out more complex investment strategies without financial risk. By using virtual money, users gain practical experience with financial markets and develop skills that can help them achieve personal financial goals.
 
 We are committed to promoting financial literacy and independence, and we believe that education is the first step in that journey. Join us in creating a more financially savvy world, one investment at a time.
-
----
-We invite you to explore our project, engage with it, and contribute to making financial education accessible and effective for everyone. Thank you for your interest in our Stock Market Simulation App!
