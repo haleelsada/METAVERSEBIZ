@@ -29,6 +29,7 @@ function Login() {
     
     if (result.token) {
        setCurrentUser(true);
+       alert("Login successfull")
        navigate ("/");
     } else {
         setErrorMessage(result.error);
@@ -70,15 +71,15 @@ const validate = (value) => {
             <form onSubmit={e => submitLogin(e)}>
             <div className='login-email-box'>
               <label htmlFor="login-email" className='login-email-label' style={{ color: isemailFocused ? '#fdd835' : '#b5b5b5' }}>Email Address </label>
-              <input type='email' name='email' className='login-email-input' value={email} onChange={e => setEmail(e.target.value)} onFocus={() => setIsemailFocused(true)} onBlur={() => setIsemailFocused(false)}></input>
+              <input type='email' name='email' required className='login-email-input' value={email} onChange={e => setEmail(e.target.value)} onFocus={() => setIsemailFocused(true)} onBlur={() => setIsemailFocused(false)}></input>
             </div>
             <div className='login-password-box'>
               <label htmlFor="login-password" className='login-password-label' style={{ color: ispasswordFocused ? '#fdd835' : '#b5b5b5' }}>Password </label>
-              <input type='password' name='password' className='login-password-input' value={password} onChange={(e) => {validate(e.target.value);setPassword(e.target.value);}} onFocus={() => setIspasswordFocused(true)} onBlur={() => setIspasswordFocused(false)}></input>
+              <input type='password' name='password' required className='login-password-input' value={password} onChange={(e) => {validate(e.target.value);setPassword(e.target.value);}} onFocus={() => setIspasswordFocused(true)} onBlur={() => setIspasswordFocused(false)}></input>
               {passworderrorMessage === '' ? null : <span style={{ marginLeft: '125px', color: 'red', }}>{passworderrorMessage}</span>} 
             </div>
             <div className='login-button-box'>
-              <button className='login-button-click'>Login</button>
+              <button type='submit' className='login-button-click'>Login</button>
             </div>
             <div>{errorMessage && <div className="error" style={{ color: '#ed4337', marginLeft: '125px', marginTop: '10px'}}>{errorMessage}</div>}</div>
             <div className='login-no-account'>
