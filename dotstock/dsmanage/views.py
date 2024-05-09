@@ -76,22 +76,22 @@ class TransactionView(APIView):
     def post(self, request, format=None):
         try:
             transaction_name_=request.data.get('transaction_name')
-            price_=request.data.get('price')
+            price=request.data.get('price')
             no_of_stocks_=request.data.get('no_of_stocks')
-            details_=request.data.get('details', '')
+            details=request.data.get('details', '')
             user = User.objects.get(pk=request.data['user_id'])
             transaction = Transaction(
                 user=user,
                 transaction_name=transaction_name_,
-                price=price_,
+                price=price,
                 no_of_stocks=no_of_stocks_,
-                details=details_
+                details=details
             )
-            if (details_=='buy') or (details_=='Buy'):
-                if user.profile.balance<(float(price_) * int(no_of_stocks_)):
+            if (details=='buy') or (details=='Buy'):
+                if user.profile.balance<(float(price) * int(no_of_stocks_)):
                     return Response('Transaction failed, don\'t have enough balance')
-                user.profile.balance = float(user.profile.balance) - (float(price_) * int(no_of_stocks_))
-            elif (details_=='sell') or (details_=='Sell'):
+                user.profile.balance = float(user.profile.balance) - (float(price) * int(no_of_stocks_))
+            elif (details=='sell') or (details=='Sell'):
                 stock_exists = Transaction.objects.filter(transaction_name=transaction_name_,status='open')
                 if not stock_exists:
                     return Response('Transaction failed, Stock not in portfolio to sell')
@@ -104,7 +104,7 @@ class TransactionView(APIView):
                     stock_exists.no_of_stocks = stock_exists.no_of_stocks - no_of_stocks_
                     stock_exists.save()
 
-                user.profile.balance = float(user.profile.balance) + (float(price_) * int(no_of_stocks_))
+                user.profile.balance = float(user.profile.balance) + (float(price) * int(no_of_stocks_))
             user.save()
             transaction.save()
             print('new transaction finished')

@@ -18,7 +18,6 @@ function Register() {
   const [passwordstrongMessage, setPasswordStrongMessage] = useState('') 
   const [passwordmatch, setPasswordmatch] = useState('')
   const [passworderror, setPassworderror] = useState('')
-  const [registersuccess, setRegistersuccess] = useState('')
   
 
 
@@ -26,7 +25,7 @@ function Register() {
     e.preventDefault();
     if (password === confirmpassword) {
       let item = {username, email, password, confirmpassword}
-      let result = await fetch("http://127.0.0.1:8000/signup", {
+      let response = await fetch("http://127.0.0.1:8000/signup", {
           method: 'POST',
           headers: {
               "Content-Type": "application/json",
@@ -34,17 +33,18 @@ function Register() {
           },
           body: JSON.stringify(item)
       });
-      result = await result.json();
+      let result = await response.json();
       console.log(result);
       
-      if (result.status === 201) {
-        setRegistersuccess("User created successfuly")
-        navigate ("/");
+      if (response.status === 201) {
+        alert("User created successfully")
+        navigate ("/login");
       } else {
           setErrorMessage(result.error);
       }
     }
 }
+
 
 const validate = (value) => { 
   if (validator.isStrongPassword(value, { 
@@ -92,21 +92,21 @@ return (
           <form onSubmit={submitRegister}>
             <div className='register-username-box'>
               <label htmlFor="register-username" className='register-username-label' style={{ color: isusernameFocused ? '#fdd835' : '#b5b5b5' }}>Username </label>
-              <input type='text' name='register-username' className='register-username-input' value={username} onChange={e => setUsername(e.target.value)} onFocus={() => setIsusernameFocused(true)} onBlur={() => setIsusernameFocused(false)}></input>
+              <input type='text' name='register-username' required className='register-username-input' value={username} onChange={e => setUsername(e.target.value)} onFocus={() => setIsusernameFocused(true)} onBlur={() => setIsusernameFocused(false)}></input>
             </div>
             <div className='register-email-box'>
               <label htmlFor="register-email" className='register-email-label' style={{ color: isemailFocused ? '#fdd835' : '#b5b5b5' }}>Email Address </label>
-              <input type='email' name='email' className='register-email-input' value={email} onChange={e => setEmail(e.target.value)} onFocus={() => setIsemailFocused(true)} onBlur={() => setIsemailFocused(false)}></input>
+              <input type='email' name='email' required className='register-email-input' value={email} onChange={e => setEmail(e.target.value)} onFocus={() => setIsemailFocused(true)} onBlur={() => setIsemailFocused(false)}></input>
             </div>
             <div className='register-password-box'>
               <label htmlFor="register-password" className='register-password-label' style={{ color: ispasswordFocused ? '#fdd835' : '#b5b5b5' }}>Password </label>
-              <input type='password' name='password' value={password} onChange={(e) => {validate(e.target.value);setPassword(e.target.value);}}  className='register-password-input' onFocus={() => setIspasswordFocused(true)} onBlur={() => setIspasswordFocused(false)}></input>
+              <input type='password' name='password' required value={password} onChange={(e) => {validate(e.target.value);setPassword(e.target.value);}}  className='register-password-input' onFocus={() => setIspasswordFocused(true)} onBlur={() => setIspasswordFocused(false)}></input>
               {passworderrorMessage === '' ? null : <span style={{ marginLeft: '125px', color: 'red', }}>{passworderrorMessage}</span>} 
               {passwordstrongMessage === '' ? null : <span style={{ marginLeft: '125px', color: 'green', }}>{passwordstrongMessage}</span>} 
             </div>
             <div className='register-confirmpassword-box'>
               <label htmlFor="register-confirmpassword" className='register-confirmpassword-label' style={{ color: isconfirmpasswordFocused ? '#fdd835' : '#b5b5b5' }}>Confirm Password </label>
-              <input type='password' value={confirmpassword} name='confirmpassword' className='register-confirmpassword-input' onChange={(e) => {setConfirmPassword(e.target.value);checkpassword(password, e.target.value);}} onFocus={() => setIsconfirmpasswordFocused(true)} onBlur={() => setIsconfirmpasswordFocused(false)}></input>
+              <input type='password' value={confirmpassword} required name='confirmpassword' className='register-confirmpassword-input' onChange={(e) => {setConfirmPassword(e.target.value);checkpassword(password, e.target.value);}} onFocus={() => setIsconfirmpasswordFocused(true)} onBlur={() => setIsconfirmpasswordFocused(false)}></input>
               {passworderror === '' ? null : <span style={{ marginLeft: '125px', color: 'red', }}>{passworderror}</span>} 
               {passwordmatch === '' ? null : <span style={{ marginLeft: '125px', color: 'green', }}>{passwordmatch}</span>} 
             </div>

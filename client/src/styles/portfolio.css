@@ -1,0 +1,153 @@
+.portfolio-container{
+    width: 1200px;
+    height: 800px;
+    background-color: #222222;
+    margin: 100px auto;
+}
+.portfolio-container input{
+    color: #ffffff;
+}
+.portfolio-title{
+    display: flex;
+    padding-top: 30px;
+    justify-content: center;
+    color: #ffffff;
+}
+.portfolio-form-box{
+    margin-top: 100px;
+}
+.portfolio-account-value-box{
+    margin-top: 50px;
+}
+.portfolio-account-value-label{
+   margin: 0px 0px 0px 420px;
+   color:#ffffff;
+}
+.portfolio-account-value-input{
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    background-color: #222222;
+    margin: 0px auto;
+    cursor: text;
+    border: none;
+    border-bottom: 1px solid #b5b5b5;
+    &:focus {
+    outline: none !important;
+    margin-top: 10px;
+    border-bottom: 1px solid #fdd835;
+    }
+}
+.portfolio-todays-change-box{
+    margin-top: 50px;
+}
+.portfolio-todays-change-label{
+   margin: 0px 0px 0px 420px;
+   color:#ffffff;
+}
+.portfolio-todays-change-input{
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    background-color: #222222;
+    margin: 0px auto;
+    cursor: text;
+    border: none;
+    border-bottom: 1px solid #b5b5b5;
+    &:focus {
+    outline: none !important;
+    margin-top: 10px;
+    border-bottom: 1px solid #fdd835;
+    }
+}
+.portfolio-annual-return-box{
+    margin-top: 50px;
+}
+.portfolio-annual-return-label{
+   margin: 0px 0px 0px 420px;
+   color:#ffffff;
+}
+.portfolio-annual-return-input{
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    background-color: #222222;
+    margin: 0px auto;
+    cursor: text;
+    border: none;
+    border-bottom: 1px solid #b5b5b5;
+    &:focus {
+    outline: none !important;
+    margin-top: 10px;
+    border-bottom: 1px solid #fdd835;
+    }
+}
+.portfolio-buying-power-box{
+    margin-top: 50px;
+}
+.portfolio-buying-power-label{
+   margin: 0px 0px 0px 420px;
+   color:#ffffff;
+}
+.portfolio-buying-power-input{
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    background-color: #222222;
+    margin: 0px auto;
+    cursor: text;
+    border: none;
+    border-bottom: 1px solid #b5b5b5;
+    &:focus {
+    outline: none !important;
+    margin-top: 10px;
+    border-bottom: 1px solid #fdd835;
+    }
+}
+
+.portfolio-cash-box{
+    margin-top: 50px;
+}
+.portfolio-cash-label{
+   margin: 0px 0px 0px 420px;
+   color:#ffffff;
+}
+.portfolio-cash-input{
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    background-color: #222222;
+    margin: 0px auto;
+    cursor: text;
+    border: none;
+    border-bottom: 1px solid #b5b5b5;
+    &:focus {
+    outline: none !important;
+    margin-top: 10px;
+    border-bottom: 1px solid #fdd835;
+    }
+}
+.portfolio-graph-container{
+    width: 1200px;
+    height: 700px;
+    background-color: #222222;
+    margin: 100px auto;
+}
+.portfolio-graph-title{
+    color:#ffffff;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.portfolio-graph{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+    height: 50vh;
+    background: url("graph.png") no-repeat;
+    background-size: cover;
+}
+
+
+
