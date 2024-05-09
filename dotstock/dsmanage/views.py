@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from rest_framework import serializers, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .models import User, Transaction, Chatbot
+from .models import User, Transaction, Chatbot, Portfolio
 from .serializers import UserSerializer
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login
@@ -55,13 +55,19 @@ class UserView(APIView):
         try:
             user = User.objects.get(pk=user_id)
             all_transaction = Transaction.objects.filter(user=user)
+            all_portfolio = Portfolio.objects.filter(user = user)
             transactions = []
+            portfolio = []
             for i in all_transaction:
                 transactions.append([i.transaction_name, i.transaction_time, i.price, i.no_of_stocks, i.details])
+            
+            for i in all_portfolio:
+                portfolio.append([i.transaction_name, i.no_of_stocks])
             user_data = {
                 'username': user.username,
                 'balance': user.profile.balance,
-                'transactions': transactions
+                'transactions': transactions,
+                'portfolio': portfolio,
             }
             return Response(user_data)
         except Exception as e:
@@ -76,42 +82,56 @@ class TransactionView(APIView):
     def post(self, request, format=None):
         try:
             transaction_name_=request.data.get('transaction_name')
-            price=request.data.get('price')
-            no_of_stocks_=request.data.get('no_of_stocks')
-            details=request.data.get('details', '')
+            price_=int(request.data.get('price'))
+            no_of_stocks_=int(request.data.get('no_of_stocks'))
+            details_=request.data.get('details', '')
             user = User.objects.get(pk=request.data['user_id'])
             transaction = Transaction(
                 user=user,
                 transaction_name=transaction_name_,
                 price=price,
                 no_of_stocks=no_of_stocks_,
-                details=details
+                details=details_.lower()
             )
-            if (details=='buy') or (details=='Buy'):
-                if user.profile.balance<(float(price) * int(no_of_stocks_)):
-                    return Response('Transaction failed, don\'t have enough balance')
-                user.profile.balance = float(user.profile.balance) - (float(price) * int(no_of_stocks_))
-            elif (details=='sell') or (details=='Sell'):
-                stock_exists = Transaction.objects.filter(transaction_name=transaction_name_,status='open')
-                if not stock_exists:
-                    return Response('Transaction failed, Stock not in portfolio to sell')
-                if stock_exists.no_of_stocks>no_of_stocks_:
-                    return Response('Transaction failed, Not enough stock to sell')
-                elif stock_exists.no_of_stocks==no_of_stocks_:
-                    stock_exists.status = 'close'
-                    stock_exists.save()
-                elif stock_exists.no_of_stocks<no_of_stocks_:
-                    stock_exists.no_of_stocks = stock_exists.no_of_stocks - no_of_stocks_
-                    stock_exists.save()
+            if (details_=='buy') or (details_=='Buy'):
+                if user.profile.balance<(float(price_) * int(no_of_stocks_)):
+                    return Response({'response':'Transaction failed, don\'t have enough balance'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+                if not Portfolio.objects.filter(user=user, stock=transaction_name_).exists():
+                    portfolio = Portfolio(user=user, stock=transaction_name_, no_of_stocks=no_of_stocks_)
+                    portfolio.save()
+                else:
+                    portfolio = Portfolio.objects.get(user=user, stock=transaction_name_)
+                    portfolio.no_of_stocks+=no_of_stocks_
+                    portfolio.save()
 
-                user.profile.balance = float(user.profile.balance) + (float(price) * int(no_of_stocks_))
+                user.profile.balance = float(user.profile.balance) - (float(price_) * int(no_of_stocks_))
+                user.profile.save()
+
+            elif (details_=='sell') or (details_=='Sell'):
+                if not Portfolio.objects.filter(user=user, stock=transaction_name_).exists():
+                    return Response({'response':'Transaction failed, Stock doesn\'t exist in portfolio'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+                total_stocks = Portfolio.objects.get(user = user, stock = transaction_name_).no_of_stocks
+
+                if total_stocks<no_of_stocks_:
+                    return Response({'response':'Transaction failed, Not enough stock to sell'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+                elif total_stocks==no_of_stocks_:
+                    portfolio = Portfolio.objects.get(user=user, stock=transaction_name_)
+                    portfolio.delete()
+                    
+                elif total_stocks>no_of_stocks_:
+                    portfolio = Portfolio.objects.get(user=user, stock=transaction_name_)
+                    portfolio.no_of_stocks-=no_of_stocks_
+                    portfolio.save()
+
+                user.profile.balance = float(user.profile.balance) + (float(price_) * int(no_of_stocks_))
+                user.profile.save()
             user.save()
             transaction.save()
             print('new transaction finished')
-            return Response('new transaction added succesfully, id :'+str(transaction.id))
+            return Response({'response':'new transaction added succesfully'},status=status.HTTP_200_OK)
         except Exception as e:
             raise e
-            return Response('transaction failed with error :'+str(e))
+            return Response({'response':'transaction failed with error :'+str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     
 class Chat(APIView):
     """

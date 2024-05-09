@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
-from .models import Transaction, Chatbot, Profile
+from .models import Transaction, Chatbot, Profile, Portfolio
 
 class ProfileInline(admin.StackedInline):
     model = Profile
@@ -16,3 +16,4 @@ admin.site.register(Transaction)
 admin.site.register(Chatbot)
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
+admin.site.register(Portfolio)

@@ -12,6 +12,14 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
+    
+# User Portfolio
+class Portfolio(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    stock = models.CharField(max_length=100)
+    no_of_stocks = models.IntegerField()
+    def __str__(self):
+        return f"{self.no_of_stocks} {self.stock} by {self.user.username}"
 
 # Model for Transactions
 class Transaction(models.Model):
