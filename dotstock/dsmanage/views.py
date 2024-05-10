@@ -11,13 +11,9 @@ from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.authtoken.models import Token
 from rest_framework.permissions import IsAuthenticated
 import google.generativeai as genai
-<<<<<<< HEAD
 import os
-
-=======
 import requests
 from bs4 import BeautifulSoup
->>>>>>> 79283ba90aeb44dd35572890f29bff172daeebef
 
 
 class Index(APIView):
