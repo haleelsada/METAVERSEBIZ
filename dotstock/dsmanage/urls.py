@@ -9,4 +9,5 @@ urlpatterns = [
     path('transaction/<int:user_id>', views.TransactionView.as_view(), name='transaction_details'),
     path('transaction', views.TransactionView.as_view(), name='transaction_details'),
     path('chat/<int:userid>', views.Chat.as_view(), name='chats'),
+    path('search/<str:query>', views.Search.as_view(), name='search')
 ]
