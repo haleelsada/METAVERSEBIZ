@@ -1,7 +1,7 @@
 .portfolio-container{
     width: 1200px;
     height: 800px;
-    background-color: #222222;
+    background-color: #131722;
     margin: 100px auto;
 }
 .portfolio-container input{
@@ -27,7 +27,7 @@
     width: 350px;
     display: flex;
     justify-content: center;
-    background-color: #222222;
+    background-color: #131722;
     margin: 0px auto;
     cursor: text;
     border: none;
@@ -49,7 +49,7 @@
     width: 350px;
     display: flex;
     justify-content: center;
-    background-color: #222222;
+    background-color: #131722;
     margin: 0px auto;
     cursor: text;
     border: none;
@@ -71,7 +71,7 @@
     width: 350px;
     display: flex;
     justify-content: center;
-    background-color: #222222;
+    background-color: #131722;
     margin: 0px auto;
     cursor: text;
     border: none;
@@ -93,7 +93,7 @@
     width: 350px;
     display: flex;
     justify-content: center;
-    background-color: #222222;
+    background-color: #131722;
     margin: 0px auto;
     cursor: text;
     border: none;
@@ -116,7 +116,7 @@
     width: 350px;
     display: flex;
     justify-content: center;
-    background-color: #222222;
+    background-color: #131722;
     margin: 0px auto;
     cursor: text;
     border: none;
@@ -130,7 +130,7 @@
 .portfolio-graph-container{
     width: 1200px;
     height: 700px;
-    background-color: #222222;
+    background-color: #131722;
     margin: 100px auto;
 }
 .portfolio-graph-title{

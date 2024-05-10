@@ -11,6 +11,7 @@ from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.authtoken.models import Token
 from rest_framework.permissions import IsAuthenticated
 import google.generativeai as genai
+import os
 
 
 
@@ -89,7 +90,7 @@ class TransactionView(APIView):
             transaction = Transaction(
                 user=user,
                 transaction_name=transaction_name_,
-                price=price,
+                price=price_,
                 no_of_stocks=no_of_stocks_,
                 details=details_.lower()
             )
@@ -138,7 +139,7 @@ class Chat(APIView):
     Manage chatbot
     """
     def __init__(self):
-        genai.configure(api_key='API_KEY')
+        genai.configure(api_key= os.getenv('API'))
         self.model = genai.GenerativeModel('gemini-pro')
         self.prompt="you are a intelligent AI Bot, talk with Human and answer his queries briefly"
 

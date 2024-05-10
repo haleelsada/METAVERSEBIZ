@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import '../styles/login.css';
 import { useNavigate } from 'react-router-dom';
 import validator from 'validator'
+import Swal from 'sweetalert2';
 
 function Login() {
   const [currentUser, setCurrentUser] = useState();
@@ -29,7 +30,10 @@ function Login() {
     
     if (result.token) {
        setCurrentUser(true);
-       alert("Login successfull")
+       Swal.fire({
+        text: "Login successful",
+        icon: "success"
+      });
        navigate ("/");
     } else {
         setErrorMessage(result.error);

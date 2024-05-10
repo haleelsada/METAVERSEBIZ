@@ -4,6 +4,7 @@ import Header from '../components/header';
 import Navbar from '../components/navbar';
 import TickerTape from '../components/ticker-tape';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 function Trade() {
   const [transaction_name, setTransactionName] = useState("");
@@ -14,11 +15,14 @@ function Trade() {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState('');
 
+  
+
 
   async function placeOrder(e) {
     e.preventDefault();
+   
     let item = {transaction_name, price, no_of_stocks,details,user_id}
-    let result = await fetch("http://127.0.0.1:8000/transaction", {
+    let response = await fetch("http://127.0.0.1:8000/transaction", {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
@@ -26,17 +30,22 @@ function Trade() {
         },
         body: JSON.stringify(item)
     });
-    result = await result.json();
+    let result = await response.json();
     console.log(result);
     
-    if (result.token) {
-       alert("Transaction successfull")
+    if (response.status === 200) {
+      const transactionData = result.transaction_data;
+      Swal.fire({
+        text: "Transaction successful" + item,
+        icon: "success"
+      });
+      
       //  navigate ("/");
     } else {
         setErrorMessage(result.error);
     }
 }
-  
+
   return (
     <div className='trade-bg'>
      <Header />
