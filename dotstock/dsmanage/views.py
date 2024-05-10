@@ -11,7 +11,8 @@ from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.authtoken.models import Token
 from rest_framework.permissions import IsAuthenticated
 import google.generativeai as genai
-
+import requests
+from bs4 import BeautifulSoup
 
 
 class Index(APIView):
@@ -179,3 +180,37 @@ class Chat(APIView):
         except Exception as e:
             return Response({'Error':str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)       
 
+class Search(APIView):
+    """
+    Retrieve user details.
+    """
+    def get(self, request, query, format=None):
+        try:
+            query=query.strip()
+            query=query.replace(' ','+')
+            url = f'https://www.screener.in/api/company/search/?q={query}&v=3&fts=1'
+            #print(url)
+            
+            response = requests.get(url)
+            
+            datas = response.json()[:-1]
+            result=[]
+            if len(datas)==0:
+                return Response({'Response':[{'name':"no stock found", 'id':'', 'price':'', 'movement':''}]}, status=status.HTTP_404_NOT_FOUND)
+            for data in datas:
+                id = data['url'].split('/')[2]
+                url = f'https://www.screener.in/company/{id}/consolidated/'
+                response = requests.get(url)
+                soup = BeautifulSoup(response.text, 'html.parser')
+                top_div = soup.find('div', id="top").find('div',class_='font-size-18 strong line-height-14')
+
+                texts = []
+                for child in top_div.descendants:
+                    if (child.name == None) and (child.strip()!=''): 
+                        texts.append(child.strip().replace(' ',''))
+                texts=texts[:2]
+
+                result.append({'name':data['name'], 'id':id, 'price':texts[0], 'movement':texts[1]})
+            return Response({'Response':result}, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'Error':str(e)})
