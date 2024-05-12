@@ -14,12 +14,15 @@ import google.generativeai as genai
 import os
 import requests
 from bs4 import BeautifulSoup
+import os
 
 
 class Index(APIView):
-    #permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     def get(self, request):
+        user = request.user
+        print('this is user :',user.username)
         return Response({"message": "Hello, world!"})
 
 class SignupView(APIView):
@@ -32,6 +35,7 @@ class SignupView(APIView):
     
 
 class LoginView(APIView):
+
     def post(self, request):
         usermail = request.data.get('email')
         password = request.data.get('password')
@@ -53,9 +57,11 @@ class UserView(APIView):
     """
     Retrieve user details.
     """
-    def get(self, request, user_id, format=None):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, format=None):
         try:
-            user = User.objects.get(pk=user_id)
+            user = request.user
             all_transaction = Transaction.objects.filter(user=user)
             all_portfolio = Portfolio.objects.filter(user = user)
             transactions = []
@@ -81,16 +87,19 @@ class TransactionView(APIView):
     """
     Add a new transaction.
     """
+    permission_classes = [IsAuthenticated]
+
     def post(self, request, format=None):
         try:
             transaction_name_=request.data.get('transaction_name')
             price_=int(request.data.get('price'))
             no_of_stocks_=int(request.data.get('no_of_stocks'))
             details_=request.data.get('details', '')
-            user = User.objects.get(pk=request.data['user_id'])
+            user = request.user
             transaction = Transaction(
                 user=user,
                 transaction_name=transaction_name_,
+                price=price_,
                 price=price_,
                 no_of_stocks=no_of_stocks_,
                 details=details_.lower()
@@ -139,13 +148,16 @@ class Chat(APIView):
     """
     Manage chatbot
     """
+    permission_classes = [IsAuthenticated]
+
     def __init__(self):
-        genai.configure(api_key= os.getenv('API'))
+        genai.configure(api_key=os.getenv('API_KEY'))
         self.model = genai.GenerativeModel('gemini-pro')
         self.prompt="you are a intelligent AI Bot, talk with Human and answer his queries briefly"
 
-    def post(self, request, userid, format=None):
+    def post(self, request, format=None):
         try:
+            userid = request.user.id
             if Chatbot.objects.filter(user__id=userid).exists():
                 user = Chatbot.objects.get(user__id=userid)
                 chat = user.chat
@@ -169,7 +181,8 @@ class Chat(APIView):
         except Exception as e:
             return Response({'Error':str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)    
 
-    def get(self, request, userid, format=None):
+    def get(self, request, format=None):
+        userid=request.user.id
         try:
             if Chatbot.objects.filter(user__id=userid).exists():
                 user = Chatbot.objects.get(user__id=userid)
