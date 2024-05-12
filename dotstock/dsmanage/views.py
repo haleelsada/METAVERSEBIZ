@@ -11,11 +11,11 @@ from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.authtoken.models import Token
 from rest_framework.permissions import IsAuthenticated
 import google.generativeai as genai
-import os
+import os, joblib
+from datetime import datetime, timedelta
 import requests
 from bs4 import BeautifulSoup
-import os
-
+import pandas as pd
 
 class Index(APIView):
     permission_classes = [IsAuthenticated]
@@ -227,5 +227,60 @@ class Search(APIView):
 
                 result.append({'name':data['name'], 'id':id, 'price':texts[0], 'movement':texts[1]})
             return Response({'Response':result}, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'Error':str(e)})
+
+
+class Prediction(APIView):
+    """
+    Retrieve user details.
+    """
+    def get(self, request, stock, format=None):
+        try:
+            model = joblib.load(os.path.dirname(os.path.realpath(__file__))+'/model.pkl')
+
+            start_date = datetime.now().strftime('%Y-%m-%d')
+            end_date = (datetime.now() - timedelta(days=6*30)).strftime('%Y-%m-%d')
+
+            apis=['P821A5286WBVNN8H','B8TFHTQIUTAZKXLO','6DOPFI32L2D5K9M0','63D0VHOE4U1FMJD1','EN08CI7V6HCZT72G','BL5U2GWN3GFAAM7D','GC0U0PN27GY4AOVZ']
+            url = f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={stock}.BSE&apikey={apis[0]}&outputsize=full'
+            response = requests.get(url)
+            data = response.json()
+            price={}
+            for i in apis:
+                if 'Time Series (Daily)' in data:
+                    daily_prices = data['Time Series (Daily)']
+                    price[stock] = {date: float(daily_prices[date]['4. close']) for date in daily_prices if end_date <= date <= start_date}
+                    break
+                else:
+                    url = f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={stock}.BSE&apikey={i}&outputsize=full'
+                    response = requests.get(url)
+                    data = response.json()
+            # Convert the dictionary to a DataFrame
+            data_current = pd.DataFrame.from_dict(price, orient='index')
+
+            data_current = data_current.iloc[:, :81]
+
+            # Reverse the columns
+            data_current = data_current[data_current.columns[::-1]]
+
+            # name with series number rather than dates
+            data_current.columns = range(1,len(data_current.columns)+1)
+
+            stocks = data_current[81]
+            data_current = data_current.iloc[:, :80]
+
+            # fill nan
+            av = data_current.mean(axis=1)
+            for i, col in enumerate(data):
+                data_current.iloc[:, i] = data_current.iloc[:, i].fillna(av)
+            current_price = data_current.iloc[0,-1]
+            current_price = data_current.iloc[0,-1]
+            predicted_price = model.predict(data_current)
+            #print(current_price, predicted_price)
+            if current_price>predicted_price:
+                return Response({'Response':"Bearish signal: Stock may decline"},status=status.HTTP_200_OK)
+            else:
+                return Response({'Response':"Bullish signal: Stock may go up"},status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'Error':str(e)})
