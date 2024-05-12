@@ -8,7 +8,7 @@ from django.dispatch import receiver
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     # Add additional fields here
-    balance = models.DecimalField(max_digits=10, decimal_places=2, default=1000)
+    balance = models.DecimalField(max_digits=10, decimal_places=2, default=10000)
 
     def __str__(self):
         return self.user.username
