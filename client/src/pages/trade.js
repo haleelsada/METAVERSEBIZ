@@ -8,9 +8,9 @@ import Swal from 'sweetalert2';
 function Trade() {
   const [transaction_name, setTransactionName] = useState("");
   const [price, setPrice] = useState("");
+  const [movement, setMovement] = useState("");
   const [no_of_stocks, setNoOfStocks] = useState("");
   const [details, setDetails] = useState("");
-  const [user_id, setUserId] = useState("");
   const [errorMessage, setErrorMessage] = useState('');
   const [errorSearch, setErrorSearch] = useState('');
   const [itemClicked, setItemClicked] = useState(false);
@@ -54,19 +54,27 @@ function Trade() {
   function handleSearchItemClick(item) {
     setTransactionName(item.name);
     setPrice(item.price)
+    setMovement(item.movement)
     setItemClicked(true);
   }
   async function placeOrder(e) {
     e.preventDefault();
     let new_price = parseInt(price.slice(1))
-    let item = {transaction_name, price:new_price, no_of_stocks,details,user_id}
+    let item = {transaction_name, price:new_price, no_of_stocks,details}
+    const token = JSON.parse(localStorage.getItem("token"));
+    console.log(token)
+    const myHeaders = new Headers();
+    myHeaders.append("Authorization", "Token " + token);
+    console.log(myHeaders)
+    const formdata = new FormData();
+    formdata.append("no_of_stocks", no_of_stocks);
+    formdata.append("price", new_price);
+    formdata.append("details", details);
+    formdata.append("transaction_name", transaction_name);
     let response = await fetch("http://127.0.0.1:8000/transaction", {
         method: 'POST',
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-        },
-        body: JSON.stringify(item)
+        headers: myHeaders,
+        body: formdata
     });
     let result = await response.json();
     console.log(result);
@@ -118,12 +126,13 @@ function Trade() {
 
         <div className='trade-user-and-price'> 
         <div className='trade-user-box'>
-        <label htmlFor='user' className='trade-user-label'>User id</label><br></br><br></br>
-        <input type='text' name='user' required  value={user_id} onChange={e => setUserId(e.target.value)} className='trade-user-input'></input>
+        <label htmlFor='user' className='trade-user-label'>Movement</label><br></br><br></br>
+        <input type='text' name='user' required readOnly value={movement} onChange={e => setMovement(e.target.value)} className='trade-user-input'
+        style={{ color: movement.startsWith("-") ? "#f2282b" : "#22ab94",marginLeft: "5px" }}></input>
         </div>
         <div className='trade-price-box'>
         <label htmlFor='price' className='trade-price-label'>Price</label><br></br><br></br>
-        <input type='text' name='price' required  value={price} onChange={e => setPrice(e.target.value)} className='trade-price-input'></input>
+        <input type='text' name='price' required readOnly value={price} onChange={e => setPrice(e.target.value)} className='trade-price-input'></input>
         </div>
         </div>
         <div className='trade-stocks-and-action'>

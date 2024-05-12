@@ -26,15 +26,18 @@ function Help() {
 
   async function submitQuestion(e) {
     e.preventDefault();
-
-    let item = { question };
-    let response = await fetch('http://127.0.0.1:8000/chat/1', {
+    const token = JSON.parse(localStorage.getItem("token"));
+    console.log(token)
+    const myHeaders = new Headers();
+    myHeaders.append("Authorization", "Token " + token);
+    console.log(myHeaders)
+    let item = JSON.stringify({question});
+    const formdata = new FormData();
+    formdata.append("question", item);
+    let response = await fetch('http://127.0.0.1:8000/chat', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify(item),
+      headers: myHeaders,
+      body: formdata,
     });
     let result = await response.json();
     console.log(result);

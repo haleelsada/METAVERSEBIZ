@@ -100,7 +100,6 @@ class TransactionView(APIView):
                 user=user,
                 transaction_name=transaction_name_,
                 price=price_,
-                price=price_,
                 no_of_stocks=no_of_stocks_,
                 details=details_.lower()
             )

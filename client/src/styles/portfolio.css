@@ -1,153 +1,65 @@
 .portfolio-container{
-    width: 1200px;
-    height: 800px;
-    background-color: #131722;
-    margin: 100px auto;
+    width: 84vw;
+    margin: 50px auto 50px auto;
 }
-.portfolio-container input{
+.portfolio-user-and-graph{
+    display: flex;
+    justify-content: center;
+}
+.portfolio-user-box{
+    width: 20vw;
+    height: 250px;
+    background-color: #131722;
     color: #ffffff;
+    margin: 75px 30px 0px 0px;
 }
-.portfolio-title{
-    display: flex;
-    padding-top: 30px;
-    justify-content: center;
-    color: #ffffff;
+.portfolio-user-data{
+    margin: 20px 50px 0px 50px;
 }
-.portfolio-form-box{
-    margin-top: 100px;
+.portfolio-content-title{
+    margin: 0px 0px 30px 0px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fdd835;
 }
-.portfolio-account-value-box{
-    margin-top: 50px;
+.portfolio-graph-box{
+    width: 60vw;
+    height: 400px;
+    background-color: #131722;  
 }
-.portfolio-account-value-label{
-   margin: 0px 0px 0px 420px;
-   color:#ffffff;
+.portfolio-graph-data{
+    margin: 20px 50px 0px 50px;
 }
-.portfolio-account-value-input{
-    width: 350px;
-    display: flex;
-    justify-content: center;
+.portfolio-padding-small{
+    margin: 0px 0px 10px 0px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #b5b5b5;
+}
+.portfolio-padding-large{
+    margin: 0px 0px 25px 0px;
+    font-size: 25px;
+    font-weight: 600;
+}
+.portfolio-holdings-and-transactions{
+    margin: 30px 0px 0px 0px;
+}
+.portfolio-holdings-box{
+    width: 82vw;
+    height: 400px;
     background-color: #131722;
-    margin: 0px auto;
-    cursor: text;
-    border: none;
-    border-bottom: 1px solid #b5b5b5;
-    &:focus {
-    outline: none !important;
-    margin-top: 10px;
-    border-bottom: 1px solid #fdd835;
-    }
-}
-.portfolio-todays-change-box{
-    margin-top: 50px;
-}
-.portfolio-todays-change-label{
-   margin: 0px 0px 0px 420px;
-   color:#ffffff;
-}
-.portfolio-todays-change-input{
-    width: 350px;
-    display: flex;
-    justify-content: center;
-    background-color: #131722;
-    margin: 0px auto;
-    cursor: text;
-    border: none;
-    border-bottom: 1px solid #b5b5b5;
-    &:focus {
-    outline: none !important;
-    margin-top: 10px;
-    border-bottom: 1px solid #fdd835;
-    }
-}
-.portfolio-annual-return-box{
-    margin-top: 50px;
-}
-.portfolio-annual-return-label{
-   margin: 0px 0px 0px 420px;
-   color:#ffffff;
-}
-.portfolio-annual-return-input{
-    width: 350px;
-    display: flex;
-    justify-content: center;
-    background-color: #131722;
-    margin: 0px auto;
-    cursor: text;
-    border: none;
-    border-bottom: 1px solid #b5b5b5;
-    &:focus {
-    outline: none !important;
-    margin-top: 10px;
-    border-bottom: 1px solid #fdd835;
-    }
-}
-.portfolio-buying-power-box{
-    margin-top: 50px;
-}
-.portfolio-buying-power-label{
-   margin: 0px 0px 0px 420px;
-   color:#ffffff;
-}
-.portfolio-buying-power-input{
-    width: 350px;
-    display: flex;
-    justify-content: center;
-    background-color: #131722;
-    margin: 0px auto;
-    cursor: text;
-    border: none;
-    border-bottom: 1px solid #b5b5b5;
-    &:focus {
-    outline: none !important;
-    margin-top: 10px;
-    border-bottom: 1px solid #fdd835;
-    }
-}
+    margin: 0px auto 0px auto;
 
-.portfolio-cash-box{
-    margin-top: 50px;
 }
-.portfolio-cash-label{
-   margin: 0px 0px 0px 420px;
-   color:#ffffff;
-}
-.portfolio-cash-input{
-    width: 350px;
-    display: flex;
-    justify-content: center;
+.portfolio-transactions-box{
+    width: 82vw;
+    height: 400px;
     background-color: #131722;
-    margin: 0px auto;
-    cursor: text;
-    border: none;
-    border-bottom: 1px solid #b5b5b5;
-    &:focus {
-    outline: none !important;
-    margin-top: 10px;
-    border-bottom: 1px solid #fdd835;
-    }
+    margin: 30px auto 0px auto; 
 }
-.portfolio-graph-container{
-    width: 1200px;
-    height: 700px;
-    background-color: #131722;
-    margin: 100px auto;
+.portfolio-holdings-data{
+    margin: 0px 50px 0px 50px;
 }
-.portfolio-graph-title{
-    color:#ffffff;
-    padding-top: 30px;
-    display: flex;
-    justify-content: center;
+.portfolio-transactions-data{
+    margin: 0px 50px 0px 50px;
 }
-.portfolio-graph{
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    margin: 50px auto;
-    height: 50vh;
-    background: url("graph.png") no-repeat;
-    background-size: cover;
-}
-
-
-

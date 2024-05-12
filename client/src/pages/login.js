@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
+import React, { useContext, useEffect, useState } from "react";
 import '../styles/login.css';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 function Login() {
-  const [currentUser, setCurrentUser] = useState();
   const [isemailFocused, setIsemailFocused] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [ispasswordFocused, setIspasswordFocused] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,11 +26,12 @@ function Login() {
     });
     result = await result.json();
     console.log(result);
-    
     if (result.token) {
-       setCurrentUser(true);
+       localStorage.setItem("token", JSON.stringify(result.token));
+       userDetails()
+       setLoggedIn(true);
        Swal.fire({
-        text: "Login successful as" + currentUser,
+        text: "Login successful",
         icon: "success"
       });
        navigate ("/");
@@ -38,6 +39,24 @@ function Login() {
         setErrorMessage(result.error);
     }
 }
+
+async function userDetails() { 
+  const token = JSON.parse(localStorage.getItem("token"));
+  console.log(token)
+  const myHeaders = new Headers();
+  myHeaders.append("Authorization", "Token " + token);
+  console.log(myHeaders)
+ 
+  let response = await fetch(`http://127.0.0.1:8000/user`, {
+      method: 'GET',
+      headers: myHeaders,
+  });
+  let result = await response.json();
+  console.log(result);
+  localStorage.setItem("username", JSON.stringify(result.username));
+  localStorage.setItem("balance", result.balance);
+}
+  
 
 const validate = (value) => {
   if (value.length < 8) {

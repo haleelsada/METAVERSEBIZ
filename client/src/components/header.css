@@ -1,8 +1,16 @@
-.header span{
-    font-size: 16px;
+.header-username-symbol{
+    font-size: 30px;
     font-weight: 600;
+    color:#fdd835;
+    margin-top: 8px;
+    padding-right: 6px;
 }
-.header {
+.header-username-text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+.header-container {
     position: sticky;
     width: 100%;
     top: 0; left: 0; 
@@ -10,13 +18,11 @@
     display: flex;
     align-items: center;
     margin: 0px;
-    justify-content: center;
+    justify-content: space-around;
     z-index: 1;
     background-color: #222222;
 }
-.cntr {
-    padding: 10px; 
-}
+
 .header-button{
     border-radius: 7px;
     outline: none;
@@ -34,8 +40,11 @@
     color: #222222;
 
 }
-.dotstock{
+.header-website-name{
+    color: white; 
+}
+.header-username{
+    display: flex;
+    justify-content: space-around;
     color: white;
-    margin-right: 900px;
-   
 }
