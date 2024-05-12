@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import '../styles/login.css';
 import { useNavigate } from 'react-router-dom';
-import validator from 'validator'
 import Swal from 'sweetalert2';
 
 function Login() {
@@ -31,7 +30,7 @@ function Login() {
     if (result.token) {
        setCurrentUser(true);
        Swal.fire({
-        text: "Login successful",
+        text: "Login successful as" + currentUser,
         icon: "success"
       });
        navigate ("/");

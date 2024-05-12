@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState} from 'react';
 import '../styles/trade.css';
 import Header from '../components/header';
 import Navbar from '../components/navbar';
 import TickerTape from '../components/ticker-tape';
-import { parsePath, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 function Trade() {
@@ -12,7 +11,6 @@ function Trade() {
   const [no_of_stocks, setNoOfStocks] = useState("");
   const [details, setDetails] = useState("");
   const [user_id, setUserId] = useState("");
-  const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState('');
   const [errorSearch, setErrorSearch] = useState('');
   const [itemClicked, setItemClicked] = useState(false);
@@ -74,7 +72,6 @@ function Trade() {
     console.log(result);
     
     if (response.status === 200) {
-      const transactionData = result.transaction_data;
       Swal.fire({
         text: result.response,
         icon: "success"
