@@ -35,11 +35,6 @@ class SignupView(APIView):
 
 class LoginView(APIView):
 
-    #login credentials
-    #batman
-    #:Bni?gp4Qs_%96P
-    #283a0db619b12f40bbfb28230887778450024cd9
-
     def post(self, request):
         usermail = request.data.get('email')
         password = request.data.get('password')
