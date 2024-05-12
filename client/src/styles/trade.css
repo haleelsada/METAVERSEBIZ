@@ -1,162 +1,184 @@
 .trade-container{
-    width: 1200px;
-    height: 1000px;
-    background-color: #222222;
-    margin: 100px auto;
+    width: 84vw;
+    display: flex;
+    background-color: #131722;
+    margin: 20px auto 30px auto;
 }
 .trade-container input{
     color: #ffffff;
 }
-.trade-title{
-    display: flex;
-    padding-top: 30px;
-    justify-content: center;
+.trade-container label{
     color: #ffffff;
 }
 .trade-form-box{
-    margin-top: 100px;
+    width: 84vw;
+    margin: 30px 0px 50px 0px;
 }
-.trade-user-box{
-    margin-top: 50px;
-}
-.trade-user-label{
-   margin: 0px 0px 0px 420px;
-   color:#ffffff;
-}
-.trade-user-input{
-    width: 350px;
+.trade-search-and-result{
     display: flex;
-    justify-content: center;
-    background-color: #222222;
-    margin: 0px auto;
-    cursor: text;
-    border: none;
-    border-bottom: 1px solid #b5b5b5;
-    &:focus {
-    outline: none !important;
-    margin-top: 10px;
-    border-bottom: 1px solid #fdd835;
-    }
-}
-.trade-stocks-box{
-    margin-top: 50px;
-}
-.trade-stocks-label{
-   margin: 0px 0px 0px 420px;
-   color:#ffffff;
-}
-.trade-stocks-input{
-    width: 350px;
-    display: flex;
-    justify-content: center;
-    background-color: #222222;
-    margin: 0px auto;
-    cursor: text;
-    border: none;
-    border-bottom: 1px solid #b5b5b5;
-    &:focus {
-    outline: none !important;
-    margin-top: 10px;
-    border-bottom: 1px solid #fdd835;
-    }
-}
-.trade-search-box{
-    margin-top: 50px;
-}
-.trade-search-label{
-   margin: 0px 0px 0px 420px;
-   color:#ffffff;
+    justify-content: flex-start;
+    margin: 0px 0px 0px 50px;
 }
 .trade-search-input{
-    width: 350px;
+     width: 50vw;
+     background-color: #131722;
+     padding: 5px 10px;
+     margin: 0px auto;
+     cursor: text;
+     border: none;
+     border: 1px solid #b5b5b5;
+     border-radius: 5px;
+     &:focus {
+     outline: none !important;
+     border: 1px solid #fdd835;
+     border-radius: 5px;
+     }
+ }
+
+.trade-user-and-price{
     display: flex;
+    justify-content: flex-start;
+    margin: 50px 0px 0px 50px;
+}
+.trade-user-input{
+    width: 30vw;
+    display: flex;
+    padding: 5px 10px;
     justify-content: center;
-    background-color: #222222;
-    margin: 0px auto;
+    background-color: #131722;
+    margin: 0px 50px 0px 0px;
     cursor: text;
     border: none;
-    border-bottom: 1px solid #b5b5b5;
+    border: 1px solid #b5b5b5;
+    border-radius: 5px;
     &:focus {
     outline: none !important;
-    margin-top: 10px;
-    border-bottom: 1px solid #fdd835;
+    border: 1px solid #fdd835;
+    border-radius: 5px;
     }
-}
-.trade-price-box{
-    margin-top: 50px;
-}
-.trade-price-label{
-   margin: 0px 0px 0px 420px;
-   color:#ffffff;
 }
 .trade-price-input{
-    width: 350px;
+    width: 22vw;
     display: flex;
+    padding: 5px 10px;
     justify-content: center;
-    background-color: #222222;
-    margin: 0px auto;
+    background-color: #131722;
+    margin: 0px 50px 0px 0px;
     cursor: text;
     border: none;
-    border-bottom: 1px solid #b5b5b5;
+    border: 1px solid #b5b5b5;
+    border-radius: 5px;
     &:focus {
     outline: none !important;
-    margin-top: 10px;
-    border-bottom: 1px solid #fdd835;
+    border: 1px solid #fdd835;
+    border-radius: 5px;
     }
 }
-.trade-clear-box{
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
 
+.trade-stocks-and-action{
+    display: flex;
+    justify-content: flex-start;
+    margin: 50px 0px 0px 50px;
+}
+.trade-stocks-input{
+    width: 30vw;
+    display: flex;
+    padding: 5px 10px;
+    justify-content: center;
+    background-color: #131722;
+    margin: 0px 50px 0px 0px;
+    cursor: text;
+    border: none;
+    border: 1px solid #b5b5b5;
+    border-radius: 5px;
+    &:focus {
+    outline: none !important;
+    border: 1px solid #fdd835;
+    border-radius: 5px;
+    }
+}
+.trade-action-options{
+    cursor: pointer;
+    width: 29vw;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0px 50px 0px 0px;
+    border: 1px solid #b5b5b5;
+    border-radius: 5px;
+    background-color: #fdd83500;
+    color: #ffffff;
+    &:focus {
+    outline: none !important;
+    border: 1px solid #fdd835;
+    border-radius: 5px;
+    }
+}
+
+.trade-clear-and-order{
+    display: flex;
+    justify-content: flex-start;
+    margin: 50px 0px 0px 50px;
 }
 .trade-clear{
     cursor: pointer;
-    width: 350px;
+    width: 14vw;
     padding: 12px;
     font-size: 16px;
+    margin: 0px 57px 0px 0px;
     font-weight: 600;
     border: none;
-    border-radius: 7px;
-    background-color: #de5a36;
+    border-radius: 5px;
+    background-color: #b5b5b5;
     color: #000000;
 }
 .trade-clear:hover{
-    background-color: #c61313;
+    background-color: #ffffff;
 }
-.trade-order-box{
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
 
-}
 .trade-order{
     cursor: pointer;
-    width: 350px;
+    width: 14vw;
     padding: 12px;
     font-size: 16px;
+    margin: 0px 50px 0px 0px;
     font-weight: 600;
     border: none;
-    border-radius: 7px;
+    border-radius: 5px;
     background-color: #fdd835;
     color: #000000;
 }
 .trade-order:hover{
     background-color: #fdf335;
 }
-.trade-action-box{
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-}
-.trade-action-options{
-    cursor: pointer;
-    width: 350px;
-    padding: 12px;
-    font-size: 16px;
-    font-weight: 600;
-    border: none;
+.trade-search-display{
+    width: 30vw;
+    border: 1px solid #b5b5b5;
     border-radius: 7px;
-    background-color: #fdd835;
-    color: #000000;
+    padding: 15px 20px;
+    margin: 20px 0px 0px 50px;
+    &:hover {
+    outline: none !important;
+    border: 1px solid #fdd835;
+    }
+}
+.trade-search-result{
+    color: #ffffff;
+    cursor: pointer;
+}
+.trade-error-result{
+    color: #ffffff;
+    cursor: pointer;
+}
+.trade-search-result:hover{
+    color: #fdd835;
+}
+.trade-action-options-list{
+    cursor: pointer;
+    background-color: #222222;
+    color: #ffffff;
+    border: none;
+}
+.trade-movement-color{
+    color: red;
 }

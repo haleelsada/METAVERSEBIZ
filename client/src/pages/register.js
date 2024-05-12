@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import '../styles/register.css';
 import { useNavigate } from 'react-router-dom';
 import validator from 'validator'
+import Swal from 'sweetalert2';
 
 function Register() {
   const [isemailFocused, setIsemailFocused] = useState(false);
@@ -37,7 +38,10 @@ function Register() {
       console.log(result);
       
       if (response.status === 201) {
-        alert("User created successfully")
+        Swal.fire({
+          text: "User created successfully",
+          icon: "success"
+        });
         navigate ("/login");
       } else {
           setErrorMessage(result.error);

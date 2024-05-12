@@ -11,6 +11,7 @@ from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.authtoken.models import Token
 from rest_framework.permissions import IsAuthenticated
 import google.generativeai as genai
+import os
 import requests
 from bs4 import BeautifulSoup
 import os
@@ -99,6 +100,7 @@ class TransactionView(APIView):
                 user=user,
                 transaction_name=transaction_name_,
                 price=price_,
+                price=price_,
                 no_of_stocks=no_of_stocks_,
                 details=details_.lower()
             )
@@ -137,7 +139,7 @@ class TransactionView(APIView):
             user.save()
             transaction.save()
             print('new transaction finished')
-            return Response({'response':'new transaction added succesfully'},status=status.HTTP_200_OK)
+            return Response({'response':'New transaction added succesfully'},status=status.HTTP_200_OK)
         except Exception as e:
             raise e
             return Response({'response':'transaction failed with error :'+str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -200,6 +202,7 @@ class Search(APIView):
         try:
             query=query.strip()
             query=query.replace(' ','+')
+            print(query)
             url = f'https://www.screener.in/api/company/search/?q={query}&v=3&fts=1'
             #print(url)
             
@@ -209,6 +212,7 @@ class Search(APIView):
             result=[]
             if len(datas)==0:
                 return Response({'Response':[{'name':"no stock found", 'id':'', 'price':'', 'movement':''}]}, status=status.HTTP_404_NOT_FOUND)
+            #print(len(datas))
             for data in datas:
                 id = data['url'].split('/')[2]
                 url = f'https://www.screener.in/company/{id}/consolidated/'

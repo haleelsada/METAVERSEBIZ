@@ -17,7 +17,7 @@ function Portfolio() {
         <form>
         <div className='portfolio-account-value-box'>
         <label htmlFor='account-value' className='portfolio-account-value-label'>Account-value</label>
-        <input type='text' name='account-value' readOnly value= "1000" required className='portfolio-account-value-input'></input>
+        <input type='text' name='account-value' readOnly value= "500" required className='portfolio-account-value-input'></input>
         </div>
         <div className='portfolio-todays-change-box'>
         <label htmlFor='todays-change' className='portfolio-todays-change-label'>Today's change</label>
