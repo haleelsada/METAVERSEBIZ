@@ -70,7 +70,7 @@ class UserView(APIView):
                 transactions.append([i.transaction_name, i.transaction_time, i.price, i.no_of_stocks, i.details])
             
             for i in all_portfolio:
-                portfolio.append([i.transaction_name, i.no_of_stocks])
+                portfolio.append([i.stock, i.no_of_stocks])
             user_data = {
                 'username': user.username,
                 'balance': user.profile.balance,

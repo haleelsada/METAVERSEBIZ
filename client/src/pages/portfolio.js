@@ -5,6 +5,12 @@ import Navbar from '../components/navbar';
 import TickerTape from '../components/ticker-tape';
 
 function Portfolio() {
+  const username = JSON.parse(localStorage.getItem("username")).toUpperCase();
+  const username_modified = username.charAt(0).toUpperCase() + username.slice(1).toLowerCase();
+  const balance = JSON.parse(localStorage.getItem("balance"));
+  
+
+  
   
   return (
     <div className='portfolio-bg'>
@@ -12,36 +18,35 @@ function Portfolio() {
       <TickerTape />
       <Navbar />
       <div className='portfolio-container'>
-        <h1 className='portfolio-title'>Portfolio</h1>
-        <div className='portfolio-form-box'>
-        <form>
-        <div className='portfolio-account-value-box'>
-        <label htmlFor='account-value' className='portfolio-account-value-label'>Account-value</label>
-        <input type='text' name='account-value' readOnly value= "500" required className='portfolio-account-value-input'></input>
+        <div className='portfolio-user-and-graph'>
+        <div className='portfolio-user-box'>
+          <div className='portfolio-user-data'>
+          <div className='portfolio-content-title'>OVERVIEW</div>
+          <div className='portfolio-username portfolio-padding-small'>Username</div>
+          <div className='portfolio-username-value portfolio-padding-large'>{username_modified}</div>
+          <div className='portfolio-balance portfolio-padding-small'>Balance</div>
+          <div className='portfolio-balance-value portfolio-padding-large'>&#x20b9; {balance}</div>
+          </div>
         </div>
-        <div className='portfolio-todays-change-box'>
-        <label htmlFor='todays-change' className='portfolio-todays-change-label'>Today's change</label>
-        <input type='text' name='todays-change' readOnly value= "+0.00" required className='portfolio-todays-change-input'></input>
+        <div className='portfolio-graph-box'>
+        <div className='portfolio-graph-data'>
+        <div className='portfolio-content-title'>PERFORMANCE</div>
         </div>
-        <div className='portfolio-annual-return-box'>
-        <label htmlFor='annual-return' className='portfolio-annual-return-label'>Annual return</label>
-        <input type='text' name='annual-return' readOnly value= "0.00%" required className='portfolio-annual-return-input'></input>
         </div>
-        <div className='portfolio-buying-power-box'>
-        <label htmlFor='buying-power' className='portfolio-buying-power-label'>Buying power</label>
-        <input type='text' name='buying-power' readOnly value= "1000" required className='portfolio-buying-power-input'></input>
         </div>
-        <div className='portfolio-cash-box'>
-        <label htmlFor='cash' className='portfolio-cash-label'>Cash</label>
-        <input type='text' name='cash' value= "1000" readOnly required className='portfolio-cash-input'></input>
+        <div className='portfolio-holdings-and-transactions'>
+        <div className='portfolio-holdings-box'>
+        <div className='portfolio-holdings-data'>
+        <div className='portfolio-content-title'>HOLDINGS</div>
         </div>
-        </form>
         </div>
-    </div>
-    <div className='portfolio-graph-container'>
-      <h1 className='portfolio-graph-title'>Portfolio Graph</h1>
-      <div className='portfolio-graph'></div>
-    </div>
+        <div className='portfolio-transactions-box'>
+        <div className='portfolio-transactions-data'>
+        <div className='portfolio-content-title'>TRANSACTIONS</div>
+        </div>
+        </div>
+        </div>
+    </div>  
     </div>
   );
 }

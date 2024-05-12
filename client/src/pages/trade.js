@@ -10,7 +10,7 @@ function Trade() {
   const [price, setPrice] = useState("");
   const [movement, setMovement] = useState("");
   const [no_of_stocks, setNoOfStocks] = useState("");
-  const [details, setDetails] = useState("");
+  const [details, setDetails] = useState("buy");
   const [errorMessage, setErrorMessage] = useState('');
   const [errorSearch, setErrorSearch] = useState('');
   const [itemClicked, setItemClicked] = useState(false);
@@ -59,10 +59,10 @@ function Trade() {
   }
   async function placeOrder(e) {
     e.preventDefault();
-    let new_price = parseInt(price.slice(1))
-    let item = {transaction_name, price:new_price, no_of_stocks,details}
+    let new_price = parseInt(price.slice(1).replace(",", ""))
     const token = JSON.parse(localStorage.getItem("token"));
     console.log(token)
+    console.log(details)
     const myHeaders = new Headers();
     myHeaders.append("Authorization", "Token " + token);
     console.log(myHeaders)
@@ -87,7 +87,10 @@ function Trade() {
       
       //  navigate ("/");
     } else {
-        setErrorMessage(result.error);
+      Swal.fire({
+        text: result.response,
+        icon: "error"
+      });
     }
 }
 
@@ -143,9 +146,10 @@ function Trade() {
         <div className='trade-action-box'>
         <label htmlFor='action' className='trade-action-label'>Action</label><br></br><br></br>
         <select className='trade-action-options' name='action' value={details} onChange={e => setDetails(e.target.value)}>
-          <option className='trade-action-options-list' value="buy">Buy</option>
-          <option className='trade-action-options-list' value="sell">Sell</option>
-          </select>
+        <option className='trade-action-options-list' value="buy">Buy</option>
+        <option className='trade-action-options-list' value="sell">Sell</option>
+        </select>
+
         </div>
         </div>
         <div className='trade-clear-and-order'>
