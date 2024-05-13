@@ -99,3 +99,20 @@
     margin: 0px 0px 20px 0px;
     color: #fdd835;
 }
+.portfolio-table {
+    color: white;
+    background-color: #131722;
+    border: 2px solid blue; /* Add blue border */
+  }
+  
+  .portfolio-table th,
+  .portfolio-table td {
+    border: 1px solid blue; /* Add borders between rows and columns */
+    text-align: center;
+    padding: 10px; /* Adjust padding as needed */
+  }
+  
+  .portfolio-table-header {
+    padding: 10px; /* Adjust padding as needed */
+  }
+  

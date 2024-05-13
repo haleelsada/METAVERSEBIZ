@@ -32,7 +32,7 @@ function Home () {
             <div className='home-getstarted'>
             <a href='/learn'>
                 <div className='getstarted-options'>
-                    <h1 className='getstarted-options-title'>Learn Crypto &rarr;</h1>
+                    <h1 className='getstarted-options-title'>Learn Stocks &rarr;</h1>
                     <p>Learning how to grasp technical concepts and engaging 
                         in conversation with AI for practical insights and guidance  with
                          real-world application.</p>
@@ -40,7 +40,7 @@ function Home () {
                 </a>
             <a href='/trade'>
                 <div className='getstarted-options'>
-                    <h1 className='getstarted-options-title'>Practice Crypto &rarr;</h1>
+                    <h1 className='getstarted-options-title'>Practice Stocks &rarr;</h1>
                     <p>Practice trading trading involves analyzing market trends and 
                         testing strategies in simulated environments to develop skills and knowledge. </p>
                 </div>

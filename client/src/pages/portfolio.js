@@ -3,6 +3,7 @@ import '../styles/portfolio.css';
 import Header from '../components/header';
 import Navbar from '../components/navbar';
 import TickerTape from '../components/ticker-tape';
+import Table from 'react-bootstrap/Table';
 
 function Portfolio() {
   const username = JSON.parse(localStorage.getItem("username")).toUpperCase();
@@ -27,48 +28,50 @@ function Portfolio() {
               <div className='portfolio-balance-value portfolio-padding-large'>&#x20b9; {balance}</div>
             </div>
           </div>
-          <div className='portfolio-graph-box'>
-            <div className='portfolio-graph-data'>
-              <div className='portfolio-user-title'>PERFORMANCE</div>
-            </div>
-          </div>
         </div>
         <div className='portfolio-holdings-and-transactions'>
-        <div className='portfolio-content-title'>HOLDINGS</div>
+          <div className='portfolio-content-title'>HOLDINGS</div>
           <div className='portfolio-holdings-box'>
-            <div className='portfolio-holdings-data'> 
-              <div className='portfolio-holdings-key'>
-                <div className='portfolio-holdings-key-value'>Stocks Name</div>
-                <div className='portfolio-holdings-key-value'>Quantity</div>
-              </div>
-              {portfolio.map((item, index) => (
-                <div className='portfolio-holdings-list' key={index}>
-                  {Object.keys(item).map((key, idx) => (
-                    <span style={{marginRight: '10px'}} key={idx}>{item[key]}</span>
-                  ))}
-                </div>
-              ))}
-            </div>
+            <Table striped bordered hover className="portfolio-table">
+              <thead>
+                <tr>
+                  <th className="portfolio-table-header">Stock Name</th>
+                  <th className="portfolio-table-header">Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                {portfolio.map((item, index) => (
+                  <tr key={index}>
+                    {Object.keys(item).map((key, idx) => (
+                      <td key={idx} className="portfolio-table-cell">{item[key]}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
           </div>
           <div className='portfolio-content-title'>TRANSACTIONS</div>
           <div className='portfolio-transactions-box'>
-            <div className='portfolio-transactions-data'>
-              <div className='portfolio-transactions-key'>
-                <div className='portfolio-transactions-key-value'>Stocks Name</div>
-                <div className='portfolio-transactions-key-value'>Date of transaction(Along with time)</div>
-                <div className='portfolio-transactions-key-value'>Price</div>
-                <div className='portfolio-transactions-key-value'>No of Stocks</div>
-                <div className='portfolio-transactions-key-value'>Action</div>
-              </div>
-              {transactions.map((item, index) => (
-                <div className='portfolio-transactions-list' key={index}>
-                  {Object.keys(item).map((key, idx) => (
-                    <span key={idx}>
-                      {item[key]}</span>
-                  ))}
-                </div>
-              ))}
-            </div>
+            <Table striped bordered hover className="portfolio-table">
+              <thead>
+                <tr>
+                  <th className="portfolio-table-header">Stock Name</th>
+                  <th className="portfolio-table-header">Date of Transaction</th>
+                  <th className="portfolio-table-header">Price</th>
+                  <th className="portfolio-table-header">No of Stocks</th>
+                  <th className="portfolio-table-header">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {transactions.map((item, index) => (
+                  <tr key={index}>
+                    {Object.keys(item).map((key, idx) => (
+                      <td key={idx} className="portfolio-table-cell">{item[key]}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
           </div>
         </div>
       </div>
