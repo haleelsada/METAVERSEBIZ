@@ -15,6 +15,7 @@ function Portfolio() {
   const [profitList,setProfitList] = useState([])
   const [scoreList,setScoreList] = useState([])
   const [transactions,setTransactions] = useState([])
+  const labels = Array.from({ length: profitList.length }, (_, index) => ("*").toString());
 
 
 
@@ -47,6 +48,31 @@ function Portfolio() {
     return () => clearTimeout(timeout);
   }, []);
 
+  const profitData = {
+    labels: labels,
+    datasets: [
+      {
+        label: 'Profit',
+        data: profitList,
+        fill: false,
+        borderColor: 'rgba(75,192,192,1)',
+      },
+    ],
+  };
+
+  // Data for the score Line chart
+  const scoreData = {
+    labels: labels,
+    datasets: [
+      {
+        label: 'Score',
+        data: scoreList,
+        fill: false,
+        borderColor: 'rgba(255,99,132,1)',
+      },
+    ],
+  };
+
 
   return (
     <div className='portfolio-bg'>
@@ -66,7 +92,8 @@ function Portfolio() {
           </div>
           <div className='portfolio-graph-box'>
             <div className='portfolio-graph-data'>
-              <div className='portfolio-user-title'>PROFIT GRAPH</div>
+              <div className='portfolio-user-title'>SCORE GRAPH</div>
+              <Line data={scoreData} />
               </div>
               </div>
         </div>
@@ -124,8 +151,8 @@ function Portfolio() {
         </div>
         <div className='portfolio-graph-box'>
             <div className='portfolio-graph-data'>
-              <div className='portfolio-user-title'>SCORE GRAPH</div>
-              
+              <div className='portfolio-user-title'>PROFIT GRAPH</div>
+              <Line data={profitData} />
               </div>
               </div>
       </div>
