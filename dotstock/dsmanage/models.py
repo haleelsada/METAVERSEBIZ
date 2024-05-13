@@ -18,6 +18,7 @@ class Portfolio(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     stock = models.CharField(max_length=100)
     no_of_stocks = models.IntegerField()
+    curr_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     def __str__(self):
         return f"{self.no_of_stocks} {self.stock} by {self.user.username}"
 
@@ -30,6 +31,8 @@ class Transaction(models.Model):
     no_of_stocks = models.IntegerField()
     details = models.CharField(max_length=4, choices=[('sell', 'Sell'),('buy', 'Buy')], default='buy')
     status = models.CharField(max_length=5, choices=[('open', 'Open'),('Close', 'Close')], default='Open')
+    profit = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    points = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
     def __str__(self):
         return f"{self.transaction_name} by {self.user.username} at {self.transaction_time}"

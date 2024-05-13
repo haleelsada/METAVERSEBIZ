@@ -67,10 +67,10 @@ class UserView(APIView):
             transactions = []
             portfolio = []
             for i in all_transaction:
-                transactions.append([i.transaction_name, i.transaction_time, i.price, i.no_of_stocks, i.details])
+                transactions.append([i.transaction_name, i.transaction_time, i.price, i.no_of_stocks, i.details, i.profit, i.points])
             
             for i in all_portfolio:
-                portfolio.append([i.transaction_name, i.no_of_stocks])
+                portfolio.append([i.stock, i.no_of_stocks])
             user_data = {
                 'username': user.username,
                 'balance': user.profile.balance,
@@ -107,11 +107,12 @@ class TransactionView(APIView):
                 if user.profile.balance<(float(price_) * int(no_of_stocks_)):
                     return Response({'response':'Transaction failed, don\'t have enough balance'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
                 if not Portfolio.objects.filter(user=user, stock=transaction_name_).exists():
-                    portfolio = Portfolio(user=user, stock=transaction_name_, no_of_stocks=no_of_stocks_)
+                    portfolio = Portfolio(user=user, stock=transaction_name_, no_of_stocks=no_of_stocks_, curr_price = price_)
                     portfolio.save()
                 else:
                     portfolio = Portfolio.objects.get(user=user, stock=transaction_name_)
                     portfolio.no_of_stocks+=no_of_stocks_
+                    portfolio.curr_price = (portfolio.curr_price*portfolio.no_of_stocks + price_*no_of_stocks_)/(portfolio.no_of_stocks+no_of_stocks_)
                     portfolio.save()
 
                 user.profile.balance = float(user.profile.balance) - (float(price_) * int(no_of_stocks_))
@@ -133,6 +134,12 @@ class TransactionView(APIView):
                     portfolio.no_of_stocks-=no_of_stocks_
                     portfolio.save()
 
+                    transaction.status = 'close'
+                    profit = (price_ - portfolio.curr_price)*100/portfolio.curr_price
+                    transaction.profit = profit
+                    points = sum([float(i.points) for i in Transaction.objects.filter(user=user, transaction_name=transaction_name_)])
+                    points = points + float(profit*portfolio.curr_price)*no_of_stocks_/10000
+                    transaction.points = points
                 user.profile.balance = float(user.profile.balance) + (float(price_) * int(no_of_stocks_))
                 user.profile.save()
             user.save()
