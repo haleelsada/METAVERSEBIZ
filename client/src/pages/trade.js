@@ -14,6 +14,7 @@ function Trade() {
   const [errorMessage, setErrorMessage] = useState('');
   const [errorSearch, setErrorSearch] = useState('');
   const [itemClicked, setItemClicked] = useState(false);
+  const [predictionOutput, setPredictionOutput] = useState('');
   const [searchOutput, setSearchOutput] = useState({
     name: '',
     id: '',
@@ -39,10 +40,29 @@ function Trade() {
         setErrorSearch(result.error);
     }
 }
+async function hintProvider(e) { 
+  let response = await fetch(`http://127.0.0.1:8000/prediction/${e}`, {
+      method: 'GET',
+      headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+      },
+  });
+  let result = await response.json();
+  console.log(result);
+  
+  if (response.status === 200) {
+    setPredictionOutput(result.Response)     
+    //  navigate ("/");
+  } else {
+      setPredictionOutput(result.error);
+  }
+}
 
   function handleInputChange(e) {
     const { value } = e.target;
     setTransactionName(value); 
+    setPredictionOutput('');
     performSearch(value); 
   }
 
@@ -56,6 +76,7 @@ function Trade() {
     setPrice(item.price)
     setMovement(item.movement)
     setItemClicked(true);
+    hintProvider(item.id);
   }
   async function placeOrder(e) {
     e.preventDefault();
@@ -106,8 +127,8 @@ function Trade() {
         <form onSubmit={e => placeOrder(e)}>
         <div className='trade-search-and-result'>
         <div className='trade-search-box'>
-        <label htmlFor='transaction-name' className='trade-search-label'>Search stocks</label><br></br><br></br>
-        <input type='text' name='transaction-name' value={transaction_name} onChange={handleQuestionChange} required className='trade-search-input'></input>
+        <label htmlFor='transaction-name' className='trade-search-label'>Stocks</label><br></br><br></br>
+        <input type='text' name='transaction-name' value={transaction_name} onChange={handleQuestionChange} placeholder='Search stocks here &#128269;' required className='trade-search-input'></input>
         </div>
         </div>
         {(transaction_name && !itemClicked) && (
@@ -126,7 +147,10 @@ function Trade() {
             <div>{errorSearch && <div className="trade-search-error">{errorSearch}</div>}</div>
           )}
         </div>)}
-
+        {(transaction_name && itemClicked) && (
+        <div>{predictionOutput && <div className="error" style={{ color: predictionOutput.startsWith("Be") ? "#f2282b" : "#22ab94", marginLeft: '50px', marginTop: '10px'}}>
+          {predictionOutput} {predictionOutput.startsWith("Be") ? <span> &#8681; </span> : <span> &#8679; </span>}</div>}
+        </div>)}
         <div className='trade-user-and-price'> 
         <div className='trade-user-box'>
         <label htmlFor='user' className='trade-user-label'>Movement</label><br></br><br></br>

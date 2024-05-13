@@ -17,6 +17,12 @@
     margin: 20px 50px 0px 50px;
 }
 .portfolio-content-title{
+    margin: 50px 0px 20px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+}
+.portfolio-user-title{
     margin: 0px 0px 30px 0px;
     font-size: 14px;
     font-weight: 600;
@@ -47,19 +53,49 @@
 .portfolio-holdings-box{
     width: 82vw;
     height: 400px;
+    display: flex;
+    justify-content: flex-start;
     background-color: #131722;
     margin: 0px auto 0px auto;
 
 }
 .portfolio-transactions-box{
     width: 82vw;
+    display: flex;
+    justify-content: flex-start;
     height: 400px;
     background-color: #131722;
-    margin: 30px auto 0px auto; 
+    margin: 0px auto 0px auto;
 }
 .portfolio-holdings-data{
-    margin: 0px 50px 0px 50px;
+    margin: 30px 50px 0px 50px;
+    color: #ffffff;
 }
 .portfolio-transactions-data{
-    margin: 0px 50px 0px 50px;
+    margin: 30px 50px 0px 50px;
+    color: #ffffff;
+}
+.portfolio-holdings-key{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0px auto 20px auto;
+    color: #fdd835;
+}
+.portfolio-transactions-list{
+    display: flex;
+    justify-content: space-around;
+    margin: 0px 0px 20px 0px;
+}
+.portfolio-holdings-list{
+    display: flex;
+    justify-content: space-around;
+    margin: 0px 0px 20px 0px;
+}
+.portfolio-transactions-key{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin: 0px 0px 20px 0px;
+    color: #fdd835;
 }

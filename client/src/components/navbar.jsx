@@ -20,8 +20,8 @@ function Navbar () {
         console.log(result);
         localStorage.setItem("username", JSON.stringify(result.username));
         localStorage.setItem("balance", result.balance);
-        localStorage.setItem("transactions", result.transactions);
-        localStorage.setItem("portfolio", result.portfolio);
+        localStorage.setItem("transactions", JSON.stringify(result.transactions));
+        localStorage.setItem("portfolio", JSON.stringify(result.portfolio));
       }
 
   return (
