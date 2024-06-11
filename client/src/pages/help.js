@@ -63,10 +63,10 @@ function Help() {
             <div className='trade-chat-display' key={index}>
               <div>
               <div className='trade-question-display'>
-              <div style={{ color: '#00ffff', marginBottom: "10px"}}>User</div>{qa.question}
+              <div style={{ color: '#4bc0c0', marginBottom: "10px"}}>User</div>{qa.question}
               </div>
               <div className='trade-answer-display'>
-              <div style={{ color: '#ff00ff', marginBottom: "10px"}}>Dotstock AI</div>{qa.answer}
+              <div style={{ color: '#ff63b4', marginBottom: "10px"}}>Dotstock AI</div>{qa.answer}
               </div>
               </div>
             </div>

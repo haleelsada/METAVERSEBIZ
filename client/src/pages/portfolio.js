@@ -80,7 +80,7 @@ function Portfolio() {
       <TickerTape />
       <Navbar />
       <div className='portfolio-container'>
-        <div className='portfolio-user-and-graph'>
+        <div className='portfolio-user-and-holdings'>
           <div className='portfolio-user-box'>
             <div className='portfolio-user-data'>
               <div className='portfolio-user-title'>OVERVIEW</div>
@@ -90,17 +90,10 @@ function Portfolio() {
               <div className='portfolio-balance-value portfolio-padding-large'>&#x20b9; {balance}</div>
             </div>
           </div>
-          <div className='portfolio-graph-box'>
-            <div className='portfolio-graph-data'>
-              <div className='portfolio-user-title'>SCORE GRAPH</div>
-              <Line data={scoreData} />
-              </div>
-              </div>
-        </div>
-        <div className='portfolio-holdings-and-transactions'>
-          <div className='portfolio-content-title'>HOLDINGS</div>
-          <div className='portfolio-holdings-box'>
-            <Table striped bordered hover className="portfolio-table">
+        <div className='portfolio-holdings-box'>
+        <div className='portfolio-holdings-data'>
+          <div className='portfolio-user-title'>HOLDINGS</div>
+            <Table striped bordered hover className="portfolio-table portfolio-table-width">
               <thead>
                 <tr>
                   <th className="portfolio-table-header">Stock Name</th>
@@ -117,10 +110,14 @@ function Portfolio() {
                 ))}
               </tbody>
             </Table>
-          </div>
-          <div className='portfolio-content-title'>TRANSACTIONS</div>
+            </div>
+            </div>
+            </div>
+          
           <div className='portfolio-transactions-box'>
-            <Table striped bordered hover className="portfolio-table">
+            <div className='portfolio-transactions-data'>
+            <div className='portfolio-content-title'>TRANSACTIONS</div>
+            <Table striped bordered hover className="portfolio-table transaction-table-width">
               <thead>
                 <tr>
                   <th className="portfolio-table-header">Stock Name</th>
@@ -147,14 +144,22 @@ function Portfolio() {
               </tbody>
               {console.log(profitList)}
             </Table>
-          </div>
-        </div>
+            </div>
+            </div>
+        <div className='portfolio-graphs'>
+        <div className='portfolio-graph-box'>
+            <div className='portfolio-graph-data'>
+              <div className='portfolio-user-title'>SCORE GRAPH</div>
+              <Line data={scoreData} />
+              </div>
+              </div>
         <div className='portfolio-graph-box'>
             <div className='portfolio-graph-data'>
               <div className='portfolio-user-title'>PROFIT GRAPH</div>
               <Line data={profitData} />
               </div>
               </div>
+        </div>
       </div>
     </div>
   );

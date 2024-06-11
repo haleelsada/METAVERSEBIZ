@@ -99,7 +99,7 @@
 }
 .trade-question-display{
     color:#ffffff;
-    border: 1px solid #fdd835;
+    border: 1px solid #4bc0c0;
     border-radius: 10px;
     width: 300px;
     padding: 20px 20px 20px 20px;
@@ -108,7 +108,7 @@
 }
 .trade-answer-display{
     color:#ffffff;
-    border: 1px solid #fdd835;
+    border: 1px solid #ff63b4;
     border-radius: 10px;
     width: 500px;
     padding: 20px 20px 20px 20px;
