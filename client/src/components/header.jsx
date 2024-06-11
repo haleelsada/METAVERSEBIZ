@@ -5,7 +5,7 @@ import { FaUserCircle } from "react-icons/fa";
 function Header () {
   const navigate = useNavigate();
   const token = JSON.parse(localStorage.getItem("token"))
-  // const username = JSON.parse(localStorage.getItem("username")).toUpperCase();
+  const username = JSON.parse(localStorage.getItem("username"));
   const username_modified = username.charAt(0).toUpperCase() + username.slice(1).toLowerCase();
   console.log("hi" + token)
 
