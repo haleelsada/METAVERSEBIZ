@@ -3,8 +3,10 @@ import '../styles/register.css';
 import { useNavigate } from 'react-router-dom';
 import validator from 'validator'
 import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 function Register() {
+  const MySwal = withReactContent(Swal);
   const [isemailFocused, setIsemailFocused] = useState(false);
   const [ispasswordFocused, setIspasswordFocused] = useState(false);
   const [isconfirmpasswordFocused, setIsconfirmpasswordFocused] = useState(false);
@@ -38,7 +40,7 @@ function Register() {
       console.log(result);
       
       if (response.status === 201) {
-        Swal.fire({
+        MySwal.fire({
           text: "User created successfully",
           icon: "success"
         });

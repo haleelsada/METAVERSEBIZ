@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import '../styles/portfolio.css';
 import Header from '../components/header';
 import Navbar from '../components/navbar';
-import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2"
 import TickerTape from '../components/ticker-tape';
 import Table from 'react-bootstrap/Table';

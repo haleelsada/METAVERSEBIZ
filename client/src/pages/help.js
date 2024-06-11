@@ -4,7 +4,6 @@ import Header from '../components/header';
 import Navbar from '../components/navbar';
 import TickerTape from '../components/ticker-tape';
 import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
 
 function Help() {
   const containerRef = useRef(null);

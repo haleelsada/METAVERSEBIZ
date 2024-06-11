@@ -4,8 +4,10 @@ import Header from '../components/header';
 import Navbar from '../components/navbar';
 import TickerTape from '../components/ticker-tape';
 import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 function Trade() {
+  const MySwal = withReactContent(Swal);
   const [transaction_name, setTransactionName] = useState("");
   const [price, setPrice] = useState("");
   const [movement, setMovement] = useState("");
@@ -101,14 +103,14 @@ async function hintProvider(e) {
     console.log(result);
     
     if (response.status === 200) {
-      Swal.fire({
+      MySwal.fire({
         text: result.response,
         icon: "success"
       });
       
       //  navigate ("/");
     } else {
-      Swal.fire({
+      MySwal.fire({
         text: result.response,
         icon: "error"
       });

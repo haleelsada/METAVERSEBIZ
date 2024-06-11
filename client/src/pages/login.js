@@ -2,8 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import '../styles/login.css';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 function Login() {
+  const MySwal = withReactContent(Swal);
   const [isemailFocused, setIsemailFocused] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const [ispasswordFocused, setIspasswordFocused] = useState(false);
@@ -30,7 +32,7 @@ function Login() {
        localStorage.setItem("token", JSON.stringify(result.token));
        userDetails()
        setLoggedIn(true);
-       Swal.fire({
+       MySwal.fire({
         text: "Login successful",
         icon: "success"
       });
