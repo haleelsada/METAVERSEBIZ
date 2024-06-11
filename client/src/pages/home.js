@@ -4,9 +4,7 @@ import Header from '../components/header';
 import TickerTape from '../components/ticker-tape';
 import Footer from '../components/footer';
 import NewNews from '../components/new-news';
-// import News from '../components/news';
 import tradingImage from '../resources/dotstock-bg-4.jpg';
-// import {  } from 'react-icons/fa';
 
 function Home () {
 
