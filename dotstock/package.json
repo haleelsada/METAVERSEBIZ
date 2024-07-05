@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "preinstall": "apt-get install -y pkg-config",
+    "build": "your-build-command"
+  }
+}
